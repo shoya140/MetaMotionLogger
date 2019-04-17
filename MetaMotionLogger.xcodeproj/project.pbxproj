@@ -12,7 +12,23 @@
 		C6AA73F72266B911008042C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F52266B911008042C7 /* Main.storyboard */; };
 		C6AA73F92266B912008042C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F82266B912008042C7 /* Assets.xcassets */; };
 		C6AA73FC2266B912008042C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73FA2266B912008042C7 /* LaunchScreen.storyboard */; };
+		C6AA740B2266BC5D008042C7 /* MetaWear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AA740A2266BC5C008042C7 /* MetaWear.framework */; };
+		C6AA740C2266BC5D008042C7 /* MetaWear.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6AA740A2266BC5C008042C7 /* MetaWear.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6AA740D2266BC5D008042C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C6AA740C2266BC5D008042C7 /* MetaWear.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C6AA73EE2266B911008042C7 /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		C6AA73F82266B912008042C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6AA73FB2266B912008042C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6AA73FD2266B912008042C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6AA740A2266BC5C008042C7 /* MetaWear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetaWear.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AA740B2266BC5D008042C7 /* MetaWear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 			children = (
 				C6AA73F02266B911008042C7 /* MetaMotionLogger */,
 				C6AA73EF2266B911008042C7 /* Products */,
+				C6AA74032266BA67008042C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +83,14 @@
 			path = MetaMotionLogger;
 			sourceTree = "<group>";
 		};
+		C6AA74032266BA67008042C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA740A2266BC5C008042C7 /* MetaWear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +101,7 @@
 				C6AA73EA2266B911008042C7 /* Sources */,
 				C6AA73EB2266B911008042C7 /* Frameworks */,
 				C6AA73EC2266B911008042C7 /* Resources */,
+				C6AA740D2266BC5D008042C7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +311,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MetaMotionLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +333,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MetaMotionLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

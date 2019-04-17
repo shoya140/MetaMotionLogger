@@ -1,0 +1,11 @@
+framework module MetaWear {
+  umbrella header "MetaWear-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MetaWear.Swift {
+    header "MetaWear-Swift.h"
+    requires objc
+}
