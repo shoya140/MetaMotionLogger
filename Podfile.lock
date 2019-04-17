@@ -1,0 +1,21 @@
+PODS:
+  - Bolts-Swift (1.4.0)
+
+DEPENDENCIES:
+  - Bolts-Swift (from `https://github.com/BoltsFramework/Bolts-Swift.git`)
+
+EXTERNAL SOURCES:
+  Bolts-Swift:
+    :git: https://github.com/BoltsFramework/Bolts-Swift.git
+
+CHECKOUT OPTIONS:
+  Bolts-Swift:
+    :commit: 8208d462d53b43a851b0f4741898c49f77c951db
+    :git: https://github.com/BoltsFramework/Bolts-Swift.git
+
+SPEC CHECKSUMS:
+  Bolts-Swift: d7b06d9261c2215eb20f483f3178763626f305a7
+
+PODFILE CHECKSUM: 6fd84dac5e5d803d955be42b7ea5fec39902bc97
+
+COCOAPODS: 1.6.1
