@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		91781BC69E7A7227C83FD870 /* Pods_MetaMotionLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E7DE01592A5CA17D5CE148 /* Pods_MetaMotionLogger.framework */; };
+		C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */; };
+		C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5ED2267B00B007550C5 /* FileWriter.swift */; };
+		C67DA5F12267B012007550C5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EF2267B012007550C5 /* GraphView.swift */; };
+		C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F02267B012007550C5 /* SIFlatButton.swift */; };
 		C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA73F12266B911008042C7 /* AppDelegate.swift */; };
 		C6AA73F42266B911008042C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA73F32266B911008042C7 /* ViewController.swift */; };
 		C6AA73F72266B911008042C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F52266B911008042C7 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 		4DF8FAC92F92459449A0F096 /* Pods-MetaMotionLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.debug.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.debug.xcconfig"; sourceTree = "<group>"; };
 		89E7DE01592A5CA17D5CE148 /* Pods_MetaMotionLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaMotionLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5D2CB8468D50FF6113CD7B /* Pods-MetaMotionLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.release.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		C67DA5ED2267B00B007550C5 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		C67DA5EF2267B012007550C5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C67DA5F02267B012007550C5 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
 		C6AA73EE2266B911008042C7 /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AA73F12266B911008042C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6AA73F32266B911008042C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C67DA5E72267AFC0007550C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C67DA5EF2267B012007550C5 /* GraphView.swift */,
+				C67DA5F02267B012007550C5 /* SIFlatButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C67DA5E82267AFCE007550C5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA73F32266B911008042C7 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C67DA5E92267AFD6007550C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C67DA5EA2267AFEF007550C5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C67DA5ED2267B00B007550C5 /* FileWriter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		C6AA73E52266B911008042C7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +111,11 @@
 		C6AA73F02266B911008042C7 /* MetaMotionLogger */ = {
 			isa = PBXGroup;
 			children = (
+				C67DA5EA2267AFEF007550C5 /* Common */,
+				C67DA5E92267AFD6007550C5 /* Extensions */,
+				C67DA5E82267AFCE007550C5 /* ViewController */,
+				C67DA5E72267AFC0007550C5 /* View */,
 				C6AA73F12266B911008042C7 /* AppDelegate.swift */,
-				C6AA73F32266B911008042C7 /* ViewController.swift */,
 				C6AA73F52266B911008042C7 /* Main.storyboard */,
 				C6AA73F82266B912008042C7 /* Assets.xcassets */,
 				C6AA73FA2266B912008042C7 /* LaunchScreen.storyboard */,
@@ -214,6 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */,
+				C67DA5F12267B012007550C5 /* GraphView.swift in Sources */,
+				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
+				C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */,
 				C6AA73F42266B911008042C7 /* ViewController.swift in Sources */,
 				C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */,
 			);
