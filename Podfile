@@ -7,4 +7,5 @@ target 'MetaMotionLogger' do
 
   # Pods for MetaMotionLogger
   pod 'Bolts-Swift', :git => 'https://github.com/BoltsFramework/Bolts-Swift.git'
+  pod 'MetaWear', :subspecs => ['UI', 'AsyncUtils', 'Mocks', 'DFU']
 end

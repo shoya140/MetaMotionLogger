@@ -13,23 +13,7 @@
 		C6AA73F72266B911008042C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F52266B911008042C7 /* Main.storyboard */; };
 		C6AA73F92266B912008042C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F82266B912008042C7 /* Assets.xcassets */; };
 		C6AA73FC2266B912008042C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73FA2266B912008042C7 /* LaunchScreen.storyboard */; };
-		C6AA740B2266BC5D008042C7 /* MetaWear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AA740A2266BC5C008042C7 /* MetaWear.framework */; };
-		C6AA740C2266BC5D008042C7 /* MetaWear.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6AA740A2266BC5C008042C7 /* MetaWear.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C6AA740D2266BC5D008042C7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C6AA740C2266BC5D008042C7 /* MetaWear.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4DF8FAC92F92459449A0F096 /* Pods-MetaMotionLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.debug.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -42,7 +26,6 @@
 		C6AA73F82266B912008042C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6AA73FB2266B912008042C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6AA73FD2266B912008042C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6AA740A2266BC5C008042C7 /* MetaWear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetaWear.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6AA740B2266BC5D008042C7 /* MetaWear.framework in Frameworks */,
 				91781BC69E7A7227C83FD870 /* Pods_MetaMotionLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +46,6 @@
 				4DF8FAC92F92459449A0F096 /* Pods-MetaMotionLogger.debug.xcconfig */,
 				8B5D2CB8468D50FF6113CD7B /* Pods-MetaMotionLogger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -102,7 +83,6 @@
 		C6AA74032266BA67008042C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6AA740A2266BC5C008042C7 /* MetaWear.framework */,
 				89E7DE01592A5CA17D5CE148 /* Pods_MetaMotionLogger.framework */,
 			);
 			name = Frameworks;
@@ -119,7 +99,6 @@
 				C6AA73EA2266B911008042C7 /* Sources */,
 				C6AA73EB2266B911008042C7 /* Frameworks */,
 				C6AA73EC2266B911008042C7 /* Resources */,
-				C6AA740D2266BC5D008042C7 /* Embed Frameworks */,
 				D260C9706C7B24F4A74D8962 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -210,12 +189,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MetaWear/MetaWear.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDFULibrary/iOSDFULibrary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BoltsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MetaWear.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDFULibrary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
