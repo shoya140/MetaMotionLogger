@@ -22,7 +22,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func dismissHUD() {
-        dismiss(animated: false, completion: nil)
+    func dismissHUD(completion:(() -> Void)? = nil) {
+        dismiss(animated: false, completion: completion)
     }
 }

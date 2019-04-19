@@ -13,12 +13,13 @@
 		C67DA5F12267B012007550C5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EF2267B012007550C5 /* GraphView.swift */; };
 		C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F02267B012007550C5 /* SIFlatButton.swift */; };
 		C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F32267B555007550C5 /* PairingVC.swift */; };
-		C67DA5F82267CCB1007550C5 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F72267CCB1007550C5 /* DeviceState.swift */; };
 		C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */; };
 		C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA73F12266B911008042C7 /* AppDelegate.swift */; };
 		C6AA73F72266B911008042C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F52266B911008042C7 /* Main.storyboard */; };
 		C6AA73F92266B912008042C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F82266B912008042C7 /* Assets.xcassets */; };
 		C6AA73FC2266B912008042C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73FA2266B912008042C7 /* LaunchScreen.storyboard */; };
+		C6D075472269726100D35C2A /* MetaWearManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D075462269726100D35C2A /* MetaWearManager.swift */; };
+		C6D0754A226979D300D35C2A /* MonitoringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D07549226979D300D35C2A /* MonitoringVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,6 @@
 		C67DA5EF2267B012007550C5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C67DA5F02267B012007550C5 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
 		C67DA5F32267B555007550C5 /* PairingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingVC.swift; sourceTree = "<group>"; };
-		C67DA5F72267CCB1007550C5 /* DeviceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
 		C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		C6AA73EE2266B911008042C7 /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AA73F12266B911008042C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		C6AA73F82266B912008042C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6AA73FB2266B912008042C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6AA73FD2266B912008042C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D075462269726100D35C2A /* MetaWearManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearManager.swift; sourceTree = "<group>"; };
+		C6D07549226979D300D35C2A /* MonitoringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringVC.swift; sourceTree = "<group>"; };
 		E684A60C1E5231DD93F26A9A /* Pods_MetaMotionLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetaMotionLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C67DA5F32267B555007550C5 /* PairingVC.swift */,
+				C6D07549226979D300D35C2A /* MonitoringVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -99,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C67DA5ED2267B00B007550C5 /* FileWriter.swift */,
-				C67DA5F72267CCB1007550C5 /* DeviceState.swift */,
+				C6D075462269726100D35C2A /* MetaWearManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -265,10 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */,
+				C6D075472269726100D35C2A /* MetaWearManager.swift in Sources */,
 				C67DA5F12267B012007550C5 /* GraphView.swift in Sources */,
 				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
+				C6D0754A226979D300D35C2A /* MonitoringVC.swift in Sources */,
 				C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */,
-				C67DA5F82267CCB1007550C5 /* DeviceState.swift in Sources */,
 				C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */,
 				C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */,
 				C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */,

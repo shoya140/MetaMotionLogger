@@ -12,8 +12,8 @@ import MetaWearCpp
 import BoltsSwift
 import iOSDFULibrary
 
-class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ScannerModelDelegate, MetaWearManagerDelegate {
+
     @IBOutlet weak var tableView: UITableView!
     
     var scannerModel: ScannerModel!
@@ -29,6 +29,8 @@ class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         scannerModel = ScannerModel(delegate: self as ScannerModelDelegate)
         scannerModel.isScanning = true
+        
+        MetaWearManager.sharedObject.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,9 +65,8 @@ class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.scannerModel.items[indexPath.row].toggleConnect()
     }
     
-}
-
-extension PairingVC: ScannerModelDelegate {
+    // MARK: - Scanner model delegate
+    
     func scannerModel(_ scannerModel: ScannerModel, didAddItemAt idx: Int) {
         tableView.reloadData()
     }
@@ -79,12 +80,7 @@ extension PairingVC: ScannerModelDelegate {
         })
         alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
             callback(true)
-            
-            self.showHUD(text: "Connecting")
-            item.device.initialDeviceSetup().continueWith(.mainThread) {_ in
-                self.dismissHUD()
-                self.dismiss(animated: true, completion: nil)
-            }
+            MetaWearManager.sharedObject.connect(device: item.device)
         })
         present(alert, animated: true, completion: nil)
     }
@@ -94,37 +90,12 @@ extension PairingVC: ScannerModelDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-}
-
-extension MetaWear {
-    // Call once to setup a device
-    func initialDeviceSetup(temperaturePeriodMsec: UInt32 = 1000) -> Task<()> {
-        return eraseDevice().continueWithTask { _ -> Task<Task<MetaWear>> in
-            return self.connectAndSetup()
-            }.continueOnSuccessWithTask { _ -> Task<()> in
-                let state = DeviceState(temperaturePeriodMsec: temperaturePeriodMsec)
-                return state.setup(self)
-            }.continueWithTask { t -> Task<()> in
-                if !t.faulted {
-                    self.remember()
-                } else {
-                    self.eraseDevice()
-                }
-                return t
-        }
-    }
     
-    // If you no longer need a device call this
-    @discardableResult
-    func eraseDevice() -> Task<MetaWear> {
-        // Remove the on-disk state
-        try? FileManager.default.removeItem(at: uniqueUrl)
-        // Drop the device from the MetaWearScanner saved list
-        forget()
-        // Reset and clear all data from the device
-        return connectAndSetup().continueOnSuccessWithTask {
-            self.clearAndReset()
-            return $0
-        }
+    // MARK: - Meta wear manager delegate
+    
+    func deviceConnected() {
+        self.dismissHUD(completion: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 }

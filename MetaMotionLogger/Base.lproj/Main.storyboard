@@ -106,7 +106,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="X6C-3K-F9a" kind="relationship" relationship="viewControllers" id="699-K2-Zff"/>
+                        <segue destination="TKd-w2-Boa" kind="relationship" relationship="viewControllers" id="ki6-mY-rkw"/>
                         <segue destination="bNd-aR-DKv" kind="relationship" relationship="viewControllers" id="VlA-A5-ExX"/>
                     </connections>
                 </tabBarController>
@@ -114,34 +114,43 @@
             </objects>
             <point key="canvasLocation" x="599" y="307"/>
         </scene>
-        <!--Real Time-->
-        <scene sceneID="B5R-w1-xBe">
+        <!--Monitoring-->
+        <scene sceneID="Z0v-ev-6ge">
             <objects>
-                <tableViewController id="X6C-3K-F9a" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Uw-WJ-TWh">
+                <viewController id="TKd-w2-Boa" customClass="MonitoringVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="34f-IJ-R6C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cDA-9t-Vjg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="a5L-H7-cl6">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a5L-H7-cl6" id="g2y-AG-tt3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FV9-QR-4yc">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FV9-QR-4yc" id="Zh2-n2-oU4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="X6C-3K-F9a" id="MG5-OZ-ntI"/>
-                            <outlet property="delegate" destination="X6C-3K-F9a" id="X0Q-7L-DTp"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Real Time" image="icon-realtime" id="ym4-yr-4dG"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dRg-Jt-bmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="jjL-PH-SHx" firstAttribute="trailing" secondItem="cDA-9t-Vjg" secondAttribute="trailing" id="11v-Nh-foc"/>
+                            <constraint firstItem="cDA-9t-Vjg" firstAttribute="top" secondItem="jjL-PH-SHx" secondAttribute="top" id="BVM-nD-i2Y"/>
+                            <constraint firstItem="jjL-PH-SHx" firstAttribute="bottom" secondItem="cDA-9t-Vjg" secondAttribute="bottom" id="SZZ-5G-Tca"/>
+                            <constraint firstItem="cDA-9t-Vjg" firstAttribute="leading" secondItem="jjL-PH-SHx" secondAttribute="leading" id="Ue7-p2-Hi6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jjL-PH-SHx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Monitoring" image="icon-realtime" id="ftx-VH-mKp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6e9-eB-f5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1547" y="151"/>
+            <point key="canvasLocation" x="1561" y="168"/>
         </scene>
         <!--Recording-->
         <scene sceneID="ri6-3l-c3w">
