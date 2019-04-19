@@ -12,7 +12,6 @@ class FileWriter: NSObject {
     
     static let sharedWriter = FileWriter()
     var isRecording = false
-    var eventLabel:Int = 0
     var segmentLabel:Int = 0
     
     private var fileHandle: FileHandle?
@@ -32,13 +31,11 @@ class FileWriter: NSObject {
     func startRecording() {
         self.isRecording = true
         
-        // create file prefix
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
         let currentFilePrefix = dateFormatter.string(from: NSDate() as Date)
         
-        // initialize EOG File
         let filePath = documentDirectory + "/" + currentFilePrefix + ".csv"
-        let text = "date,epoch_time,blink_speed,blink_strength,eye_move_up,eye_move_down,eye_move_left,eye_move_right,acc_x,acc_y,acc_z,roll,pitch,yaw,is_walking,fit_error,power_left,event,segment,app_state\n"
+        let text = "timestamp,type,value1,value2,value3,segment\n"
         do {
             try text.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
         } catch _ {
@@ -54,44 +51,16 @@ class FileWriter: NSObject {
         self.isRecording = false
     }
     
-//    func writeData(data: MEMERealTimeData) {
-//        if !self.isRecording {
-//            return
-//        }
-//        
-//        let date = NSDate()
-//        let dateString = dateFormatter.string(from: date as Date)
-//        let epochTime = date.timeIntervalSince1970
-//        let applicationState = UIApplication.sharedApplication.applicationState.rawValue
-//        
-//        if let handle = fileHandle {
-//            let text = NSString(format: "%@,%10.5f,%d,%d,%d,%d,%d,%d,%d,%d,%d,%f,%f,%f,%d,%d,%d,%d,%d,%d\n",
-//                                dateString,
-//                                epochTime,
-//                                data.blinkSpeed,
-//                                data.blinkStrength,
-//                                data.eyeMoveUp,
-//                                data.eyeMoveDown,
-//                                data.eyeMoveLeft,
-//                                data.eyeMoveRight,
-//                                data.accX,
-//                                data.accY,
-//                                data.accZ,
-//                                data.roll,
-//                                data.pitch,
-//                                data.yaw,
-//                                data.isWalking,
-//                                data.fitError,
-//                                data.powerLeft,
-//                                self.eventLabel,
-//                                self.segmentLabel,
-//                                applicationState
-//            )
-//            if let d = text.dataUsingEncoding(NSUTF8StringEncoding) {
-//                handle.writeData(d)
-//            }
-//        }
-//        self.eventLabel = 0
-//    }
+    func write(data: String) {
+        if !self.isRecording {
+            return
+        }
+        
+        if let handle = fileHandle {
+            if let d = (NSDate().timeIntervalSince1970.description+","+data+","+segmentLabel.description+"\n").data(using: String.Encoding.utf8) {
+                handle.write(d)
+            }
+        }
+    }
     
 }

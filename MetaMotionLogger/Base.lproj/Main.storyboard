@@ -107,7 +107,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="TKd-w2-Boa" kind="relationship" relationship="viewControllers" id="ki6-mY-rkw"/>
-                        <segue destination="bNd-aR-DKv" kind="relationship" relationship="viewControllers" id="VlA-A5-ExX"/>
+                        <segue destination="t3r-Ux-Ybk" kind="relationship" relationship="viewControllers" id="LBu-Bx-Ws3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZJ-gd-3TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,20 +201,106 @@
             <point key="canvasLocation" x="1560.8695652173915" y="167.41071428571428"/>
         </scene>
         <!--Recording-->
-        <scene sceneID="ri6-3l-c3w">
+        <scene sceneID="ZZ0-dY-FMA">
             <objects>
-                <viewController id="bNd-aR-DKv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m1u-bl-luc">
+                <viewController id="t3r-Ux-Ybk" customClass="RecordingVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pks-LD-yfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-re-i1L" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
+                                <rect key="frame" x="20" y="128" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7zS-Zi-LQB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start Recording"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.23137254900000001" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="switchRecording:" destination="t3r-Ux-Ybk" eventType="touchUpInside" id="uoZ-ce-rVS"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-qN-wKe">
+                                <rect key="frame" x="20" y="723" width="374" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G4F-Ja-7Bu"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentLabelChanged:" destination="t3r-Ux-Ybk" eventType="valueChanged" id="LcA-uh-Bwd"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Xq-tSf" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
+                                <rect key="frame" x="20" y="248" width="374" height="424"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Event Label"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.23137254900000001" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="eventLabelButtonTapped:" destination="t3r-Ux-Ybk" eventType="touchUpInside" id="0b9-Zf-n9K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segment Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8X-3O-Fde">
+                                <rect key="frame" x="20" y="692" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SDx-g4-cfw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="XUl-oT-KeL"/>
+                        <constraints>
+                            <constraint firstItem="t8X-3O-Fde" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="2HA-iy-ME3"/>
+                            <constraint firstItem="uyL-re-i1L" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="AHr-rS-GzN"/>
+                            <constraint firstItem="v6q-qN-wKe" firstAttribute="top" secondItem="t8X-3O-Fde" secondAttribute="bottom" constant="10" id="CNG-sC-1X5"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="Rxp-Xq-tSf" secondAttribute="trailing" constant="20" id="HO6-8a-k3w"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="uyL-re-i1L" secondAttribute="trailing" constant="20" id="KzQ-1W-TJ3"/>
+                            <constraint firstItem="Rxp-Xq-tSf" firstAttribute="top" secondItem="uyL-re-i1L" secondAttribute="bottom" constant="20" id="Lef-xw-2nK"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="v6q-qN-wKe" secondAttribute="trailing" constant="20" id="Pe7-eU-CD0"/>
+                            <constraint firstItem="uyL-re-i1L" firstAttribute="top" secondItem="cpo-4N-90v" secondAttribute="top" constant="40" id="Wh4-m7-brv"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="v6q-qN-wKe" secondAttribute="bottom" constant="40" id="XgZ-Hn-YFc"/>
+                            <constraint firstItem="v6q-qN-wKe" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="Xld-bg-O7X"/>
+                            <constraint firstItem="Rxp-Xq-tSf" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="gb7-gP-gS0"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="t8X-3O-Fde" secondAttribute="trailing" constant="20" id="m0a-4X-bHD"/>
+                            <constraint firstItem="t8X-3O-Fde" firstAttribute="top" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="mvb-j6-O0A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cpo-4N-90v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recording" image="icon-recording" id="iGF-Rs-X3f"/>
+                    <tabBarItem key="tabBarItem" title="Recording" image="icon-recording" id="gfy-JX-9kB"/>
+                    <connections>
+                        <outlet property="recordSwitchButton" destination="uyL-re-i1L" id="VSv-w6-cal"/>
+                        <outlet property="segmentSwitch" destination="v6q-qN-wKe" id="OqR-R8-oEJ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="smo-hk-vd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEc-iK-aBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="844"/>
+            <point key="canvasLocation" x="1569.5652173913045" y="858.48214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZAf-wS-R3c">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ABC2DA82252A8D376860A653 /* Pods_MetaMotionLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E684A60C1E5231DD93F26A9A /* Pods_MetaMotionLogger.framework */; };
+		C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67259A52269E065006AE2FE /* RecordingVC.swift */; };
 		C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */; };
 		C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5ED2267B00B007550C5 /* FileWriter.swift */; };
 		C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EF2267B012007550C5 /* SIGraphView.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2994189C94DED78FFE101548 /* Pods-MetaMotionLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.release.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.release.xcconfig"; sourceTree = "<group>"; };
 		3711F7FD6563C55015F33B54 /* Pods-MetaMotionLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.debug.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		C67259A52269E065006AE2FE /* RecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingVC.swift; sourceTree = "<group>"; };
 		C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C67DA5ED2267B00B007550C5 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		C67DA5EF2267B012007550C5 /* SIGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIGraphView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				C67DA5F32267B555007550C5 /* PairingVC.swift */,
 				C6D07549226979D300D35C2A /* MonitoringVC.swift */,
+				C67259A52269E065006AE2FE /* RecordingVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -175,6 +178,11 @@
 				TargetAttributes = {
 					C6AA73ED2266B911008042C7 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,6 +279,7 @@
 				C6D075472269726100D35C2A /* MetaWearManager.swift in Sources */,
 				C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */,
 				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
+				C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */,
 				C6D0754A226979D300D35C2A /* MonitoringVC.swift in Sources */,
 				C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */,
 				C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */,

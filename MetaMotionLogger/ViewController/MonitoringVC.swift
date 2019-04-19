@@ -37,6 +37,9 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewWillAppear(animated)
         
         MetaWearManager.sharedObject.delegate = self
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (Timer) in
+            self.tableView.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -137,6 +140,10 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func accDataReceived(data: [String : Double]) {
+        if FileWriter.sharedWriter.isRecording {
+            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data["x"]!, data["y"]!, data["z"]!) as String)
+        }
+        
         accXValues.append(data["x"] ?? 0)
         if accXValues.count > Int(self.numberOfValuesToBeDisplayed) {
             accXValues.removeSubrange(0 ..< accXValues.count - Int(numberOfValuesToBeDisplayed))
@@ -151,13 +158,13 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if accZValues.count > Int(self.numberOfValuesToBeDisplayed) {
             accZValues.removeSubrange(0 ..< accZValues.count - Int(numberOfValuesToBeDisplayed))
         }
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
     
     func gyroDataReceived(data: [String : Double]) {
+        if FileWriter.sharedWriter.isRecording {
+            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f", data["roll"]!, data["pitch"]!, data["yaw"]!) as String)
+        }
+        
         rollValues.append(data["roll"] ?? 0)
         if rollValues.count > Int(self.numberOfValuesToBeDisplayed) {
             rollValues.removeSubrange(0 ..< rollValues.count - Int(numberOfValuesToBeDisplayed))
@@ -172,9 +179,6 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if yawValues.count > Int(self.numberOfValuesToBeDisplayed) {
             yawValues.removeSubrange(0 ..< yawValues.count - Int(numberOfValuesToBeDisplayed))
         }
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
+    
 }
