@@ -43,11 +43,11 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,82 +57,30 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Accelerometer"
-        case 1:
-            return "Gyroscope"
+            return "BMI160 Motion"
         default:
             return ""
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
+        switch indexPath.row {
         case 0:
-            switch indexPath.row {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "X"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accXValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = accXValues
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Y"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accYValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = accYValues
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Z"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accZValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = accZValues
-                return cell
-            default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+            (cell.viewWithTag(1) as! UILabel).text = "Accelerometer"
+            (cell.viewWithTag(2) as! SIGraphView).maximumValue = 2
+            (cell.viewWithTag(2) as! SIGraphView).minimumValue = -2
+            (cell.viewWithTag(2) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
+            (cell.viewWithTag(2) as! SIGraphView).signals = [accXValues, accYValues, accZValues]
+            return cell
         case 1:
-            switch indexPath.row {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "X"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", rollValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = rollValues
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Y"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", pitchValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = pitchValues
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Z"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", yawValues.last!)
-                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
-                (cell.viewWithTag(3) as! SIGraphView).values = yawValues
-                return cell
-            default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+            (cell.viewWithTag(1) as! UILabel).text = "Gyroscope"
+            (cell.viewWithTag(2) as! SIGraphView).maximumValue = 1000
+            (cell.viewWithTag(2) as! SIGraphView).minimumValue = -1000
+            (cell.viewWithTag(2) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed
+            (cell.viewWithTag(2) as! SIGraphView).signals = [rollValues, pitchValues, yawValues]
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             return cell

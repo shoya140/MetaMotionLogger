@@ -45,7 +45,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var values: [Double]?{
+    @IBInspectable var signals: [[Double]]?{
         didSet {
             self.setNeedsDisplay()
         }
@@ -106,30 +106,31 @@ import UIKit
         context.strokePath()
         
         // Don't draw graph if values.count == 0
-        if self.values == nil { return }
-        let values = self.values!
+        if self.signals == nil { return }
         
-        // Draw graph
-        let path = UIBezierPath()
-        path.lineWidth = 1.0
-        
-        let horizontalPixelPerValue: CGFloat = frame.width / CGFloat(max(1, max(Int(self.minimumNumberOfValuesToBeDisplayed) - 1, values.count - 1)))
-        let offset = max(0, Int(self.minimumNumberOfValuesToBeDisplayed) - values.count)
-        
-        for (index, value) in values.enumerated() {
-            let point = CGPoint(
-                x: frame.minX + horizontalPixelPerValue * CGFloat(offset + index),
-                y: frame.minY + verticalPixelPerValue * CGFloat(self.maximumValue - value)
-            )
+        for (index, values) in self.signals!.enumerated() {
+            // Draw graph
+            let path = UIBezierPath()
+            path.lineWidth = 1.0
             
-            if index == 0 {
-                path.move(to: point)
-            } else {
-                path.addLine(to: point)
+            let horizontalPixelPerValue: CGFloat = frame.width / CGFloat(max(1, max(Int(self.minimumNumberOfValuesToBeDisplayed) - 1, values.count - 1)))
+            let offset = max(0, Int(self.minimumNumberOfValuesToBeDisplayed) - values.count)
+            
+            for (index, value) in values.enumerated() {
+                let point = CGPoint(
+                    x: frame.minX + horizontalPixelPerValue * CGFloat(offset + index),
+                    y: frame.minY + verticalPixelPerValue * CGFloat(self.maximumValue - value)
+                )
+                
+                if index == 0 {
+                    path.move(to: point)
+                } else {
+                    path.addLine(to: point)
+                }
             }
+            
+            self.lineColor.darker(by: CGFloat(index*10))?.setStroke()
+            path.stroke()
         }
-        
-        self.lineColor.setStroke()
-        path.stroke()
     }
 }

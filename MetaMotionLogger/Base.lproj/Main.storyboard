@@ -13,6 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PIR-TS-Ew4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAv-Ix-NFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="6S6-Ii-gzU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YCe-av-lYS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -22,13 +23,13 @@
                         <segue destination="t32-TK-Bb4" kind="relationship" relationship="rootViewController" id="pwl-fU-RSi"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hAv-Ix-NFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="-583"/>
         </scene>
         <!--Pairing-->
         <scene sceneID="NPc-ly-lm1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXb-VE-lls" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t32-TK-Bb4" customClass="PairingVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="94G-fZ-Tf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -85,13 +86,13 @@
                         <outlet property="tableView" destination="anW-XP-N7W" id="dEl-uB-u0I"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oXb-VE-lls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1546" y="-583"/>
         </scene>
         <!--MetaMotion Logger-->
         <scene sceneID="hUF-9c-ElV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZJ-gd-3TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="0ey-hn-00F" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="MetaMotion Logger" id="LBY-qP-jUX">
                         <barButtonItem key="rightBarButtonItem" title="Pairing" id="Vm3-f2-O5W">
@@ -110,13 +111,13 @@
                         <segue destination="t3r-Ux-Ybk" kind="relationship" relationship="viewControllers" id="LBu-Bx-Ws3"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cZJ-gd-3TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="307"/>
         </scene>
         <!--Monitoring-->
         <scene sceneID="Z0v-ev-6ge">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6e9-eB-f5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TKd-w2-Boa" customClass="MonitoringVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34f-IJ-R6C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -141,41 +142,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="181.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Accelerometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-DP-boA">
-                                                    <rect key="frame" x="18" y="10" width="112" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Accelerometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-DP-boA">
+                                                    <rect key="frame" x="18" y="8" width="106" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="K1q-m0-Vbs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyv-de-noP" customClass="SIGraphView" customModule="MetaMotionLogger" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="36" width="398" height="135.5"/>
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyv-de-noP" customClass="SIGraphView" customModule="MetaMotionLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="34" width="396" height="137.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                            <color key="value" red="0.043137254901960784" green="0.51764705882352935" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.23137254900000001" green="0.68235294120000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3s-Cx-CGv">
-                                                    <rect key="frame" x="361" y="10" width="35" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.043137254899999998" green="0.51764705879999995" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="q3s-Cx-CGv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Usg-DP-boA" secondAttribute="trailing" constant="8" symbolic="YES" id="AcP-AP-lBE"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Usg-DP-boA" secondAttribute="trailing" constant="20" symbolic="YES" id="Gya-37-452"/>
                                                 <constraint firstItem="kyv-de-noP" firstAttribute="top" secondItem="Usg-DP-boA" secondAttribute="bottom" constant="5" id="MgV-KK-HBf"/>
-                                                <constraint firstAttribute="trailing" secondItem="q3s-Cx-CGv" secondAttribute="trailing" constant="18" id="NmW-Ca-NFc"/>
                                                 <constraint firstItem="Usg-DP-boA" firstAttribute="leading" secondItem="g2y-AG-tt3" secondAttribute="leading" constant="18" id="PTO-hT-TzI"/>
-                                                <constraint firstItem="q3s-Cx-CGv" firstAttribute="centerY" secondItem="Usg-DP-boA" secondAttribute="centerY" id="aIT-NI-tRI"/>
                                                 <constraint firstAttribute="bottom" secondItem="kyv-de-noP" secondAttribute="bottom" constant="10" id="bf7-IV-dbj"/>
                                                 <constraint firstAttribute="trailing" secondItem="kyv-de-noP" secondAttribute="trailing" constant="8" id="mbj-8r-OBA"/>
-                                                <constraint firstItem="kyv-de-noP" firstAttribute="leading" secondItem="g2y-AG-tt3" secondAttribute="leading" constant="8" id="sE2-3g-Yrd"/>
-                                                <constraint firstItem="Usg-DP-boA" firstAttribute="top" secondItem="g2y-AG-tt3" secondAttribute="top" constant="10" id="wcn-AR-nfC"/>
+                                                <constraint firstItem="kyv-de-noP" firstAttribute="leading" secondItem="g2y-AG-tt3" secondAttribute="leading" constant="10" id="sE2-3g-Yrd"/>
+                                                <constraint firstItem="Usg-DP-boA" firstAttribute="top" secondItem="g2y-AG-tt3" secondAttribute="top" constant="8" id="wcn-AR-nfC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -196,13 +189,13 @@
                         <outlet property="tableView" destination="cDA-9t-Vjg" id="Xa4-0p-wat"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6e9-eB-f5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560.8695652173915" y="167.41071428571428"/>
         </scene>
         <!--Recording-->
         <scene sceneID="ZZ0-dY-FMA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEc-iK-aBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t3r-Ux-Ybk" customClass="RecordingVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pks-LD-yfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -298,13 +291,13 @@
                         <outlet property="segmentSwitch" destination="v6q-qN-wKe" id="OqR-R8-oEJ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sEc-iK-aBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="858.48214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZAf-wS-R3c">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alT-cs-lVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="0nJ-zv-De4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5n4-Qx-WTO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -314,7 +307,6 @@
                         <segue destination="0ey-hn-00F" kind="relationship" relationship="rootViewController" id="zQp-1V-tY6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="alT-cs-lVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314" y="307"/>
         </scene>

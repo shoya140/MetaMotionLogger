@@ -71,9 +71,8 @@ class MetaWearManager: NSObject {
             mbl_mw_gyro_bmi160_enable_rotation_sampling(board)
             mbl_mw_gyro_bmi160_start(board)
             
-            }
-            .continueWith(.mainThread) {_ in
-                self.delegate?.deviceConnected()
+        }.continueWith(.mainThread) {_ in
+            self.delegate?.deviceConnected()
         }
     }
     
