@@ -35,7 +35,7 @@ class FileWriter: NSObject {
         let currentFilePrefix = dateFormatter.string(from: NSDate() as Date)
         
         let filePath = documentDirectory + "/" + currentFilePrefix + ".csv"
-        let text = "#timestamp,type,value1,value2,value3,segment\n"
+        let text = "#timestamp,type,value1,value2,value3,value4,segment\n"
         do {
             try text.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
         } catch _ {

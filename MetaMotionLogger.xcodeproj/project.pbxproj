@@ -17,6 +17,8 @@
 		C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */; };
 		C6A44613226A16B4000EA1FC /* MetaWearAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */; };
 		C6A44615226A1B09000EA1FC /* MetaWearGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */; };
+		C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */; };
+		C6A44619226A3E63000EA1FC /* MetaWearQuat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44618226A3E63000EA1FC /* MetaWearQuat.swift */; };
 		C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA73F12266B911008042C7 /* AppDelegate.swift */; };
 		C6AA73F72266B911008042C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F52266B911008042C7 /* Main.storyboard */; };
 		C6AA73F92266B912008042C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6AA73F82266B912008042C7 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearAcc.swift; sourceTree = "<group>"; };
 		C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearGyro.swift; sourceTree = "<group>"; };
+		C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearMag.swift; sourceTree = "<group>"; };
+		C6A44618226A3E63000EA1FC /* MetaWearQuat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearQuat.swift; sourceTree = "<group>"; };
 		C6AA73EE2266B911008042C7 /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6AA73F12266B911008042C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6AA73F62266B911008042C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */,
 				C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */,
+				C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */,
+				C6A44618226A3E63000EA1FC /* MetaWearQuat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 				C6D0754A226979D300D35C2A /* MonitoringVC.swift in Sources */,
 				C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */,
 				C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */,
+				C6A44619226A3E63000EA1FC /* MetaWearQuat.swift in Sources */,
 				C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */,
+				C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */,
 				C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

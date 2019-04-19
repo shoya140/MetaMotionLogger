@@ -13,6 +13,8 @@ import MetaWearCpp
 protocol MetaWearManagerDelegate: class {
     func receivedAcc(data: MetaWearAcc)
     func receivedGyro(data: MetaWearGyro)
+    func receivedMag(data: MetaWearMag)
+    func receivedQuat(data: MetaWearQuat)
     func deviceConnected()
 }
 
@@ -22,6 +24,14 @@ extension MetaWearManagerDelegate {
     }
     
     func receivedGyro(data: MetaWearGyro) {
+        
+    }
+
+    func receivedMag(data: MetaWearMag) {
+        
+    }
+    
+    func receivedQuat(data: MetaWearQuat) {
         
     }
     
@@ -70,6 +80,25 @@ class MetaWearManager: NSObject {
             }
             mbl_mw_gyro_bmi160_enable_rotation_sampling(board)
             mbl_mw_gyro_bmi160_start(board)
+            
+            mbl_mw_mag_bmm150_set_preset(board, MBL_MW_MAG_BMM150_PRESET_REGULAR)
+            mbl_mw_datasignal_subscribe(mbl_mw_mag_bmm150_get_packed_b_field_data_signal(board) , bridge(obj: self)) { (context, data) in
+                let obj: MblMwCartesianFloat = data!.pointee.valueAs()
+                let _self: MetaWearManager = bridge(ptr: context!)
+                _self.delegate?.receivedMag(data: MetaWearMag(x: Double(obj.x), y: Double(obj.y), z: Double(obj.z)))
+            }
+            mbl_mw_mag_bmm150_enable_b_field_sampling(board)
+            mbl_mw_mag_bmm150_start(board)
+            
+            mbl_mw_sensor_fusion_set_mode(board, MBL_MW_SENSOR_FUSION_MODE_IMU_PLUS)
+            mbl_mw_sensor_fusion_write_config(board)
+            mbl_mw_datasignal_subscribe(mbl_mw_sensor_fusion_get_data_signal(board, MBL_MW_SENSOR_FUSION_DATA_QUATERNION), bridge(obj: self)) { (context, data) in
+                let obj: MblMwQuaternion = data!.pointee.valueAs()
+                let _self: MetaWearManager = bridge(ptr: context!)
+                _self.delegate?.receivedQuat(data: MetaWearQuat(w: Double(obj.w), x: Double(obj.x), y: Double(obj.y), z: Double(obj.z)))
+            }
+            mbl_mw_sensor_fusion_enable_data(board, MBL_MW_SENSOR_FUSION_DATA_QUATERNION)
+            mbl_mw_sensor_fusion_start(board)
             
         }.continueWith(.mainThread) {_ in
             self.delegate?.deviceConnected()
