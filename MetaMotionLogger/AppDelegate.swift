@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let themeColor = UIColor.hex(code: "#3baebf", alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = themeColor
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        UITabBar.appearance().tintColor = themeColor
+        UISegmentedControl.appearance().tintColor = themeColor
+        
         return true
     }
 

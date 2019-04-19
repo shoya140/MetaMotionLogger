@@ -68,7 +68,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Accelemeter X"
+                (cell.viewWithTag(1) as! UILabel).text = "X"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accXValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
@@ -77,7 +77,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Accelelometer Y"
+                (cell.viewWithTag(1) as! UILabel).text = "Y"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accYValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
@@ -86,7 +86,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Accelelometer Z"
+                (cell.viewWithTag(1) as! UILabel).text = "Z"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accZValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2

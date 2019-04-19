@@ -147,23 +147,28 @@
                                                         <constraint firstAttribute="height" constant="21" id="K1q-m0-Vbs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyv-de-noP" customClass="SIGraphView" customModule="MetaMotionLogger" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="41" width="398" height="130.5"/>
+                                                    <rect key="frame" x="8" y="36" width="398" height="135.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" red="0.043137254901960784" green="0.51764705882352935" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3s-Cx-CGv">
                                                     <rect key="frame" x="361" y="10" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.043137254899999998" green="0.51764705879999995" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="q3s-Cx-CGv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Usg-DP-boA" secondAttribute="trailing" constant="8" symbolic="YES" id="AcP-AP-lBE"/>
-                                                <constraint firstItem="kyv-de-noP" firstAttribute="top" secondItem="Usg-DP-boA" secondAttribute="bottom" constant="10" id="MgV-KK-HBf"/>
+                                                <constraint firstItem="kyv-de-noP" firstAttribute="top" secondItem="Usg-DP-boA" secondAttribute="bottom" constant="5" id="MgV-KK-HBf"/>
                                                 <constraint firstAttribute="trailing" secondItem="q3s-Cx-CGv" secondAttribute="trailing" constant="18" id="NmW-Ca-NFc"/>
                                                 <constraint firstItem="Usg-DP-boA" firstAttribute="leading" secondItem="g2y-AG-tt3" secondAttribute="leading" constant="18" id="PTO-hT-TzI"/>
                                                 <constraint firstItem="q3s-Cx-CGv" firstAttribute="centerY" secondItem="Usg-DP-boA" secondAttribute="centerY" id="aIT-NI-tRI"/>
