@@ -11,17 +11,17 @@ import MetaWear
 import MetaWearCpp
 
 protocol MetaWearManagerDelegate: class {
-    func accDataReceived(data: [String:Double])
-    func gyroDataReceived(data: [String:Double])
+    func receivedAcc(data: MetaWearAcc)
+    func receivedGyro(data: MetaWearGyro)
     func deviceConnected()
 }
 
 extension MetaWearManagerDelegate {
-    func accDataReceived(data: [String:Double]) {
+    func receivedAcc(data: MetaWearAcc) {
         
     }
     
-    func gyroDataReceived(data: [String:Double]) {
+    func receivedGyro(data: MetaWearGyro) {
         
     }
     
@@ -41,6 +41,10 @@ class MetaWearManager: NSObject {
     
     weak var delegate: MetaWearManagerDelegate? = nil
     var device: MetaWear? = nil
+    var accRange = 2
+    var accFrequency = 100
+    var gyroRange = 250
+    var gyroFrequency = 100
     
     func connect(device: MetaWear) {
         self.device = device
@@ -52,7 +56,7 @@ class MetaWearManager: NSObject {
             mbl_mw_datasignal_subscribe(mbl_mw_acc_get_packed_acceleration_data_signal(board), bridge(obj: self)) { (context, data) in
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
                 let _self: MetaWearManager = bridge(ptr: context!)
-                _self.delegate?.accDataReceived(data: ["x": Double(obj.x), "y": Double(obj.y), "z": Double(obj.x)])
+                _self.delegate?.receivedAcc(data: MetaWearAcc(x: Double(obj.x), y: Double(obj.y), z: Double(obj.z)))
             }
             mbl_mw_acc_enable_acceleration_sampling(board)
             mbl_mw_acc_start(board)
@@ -62,7 +66,7 @@ class MetaWearManager: NSObject {
             mbl_mw_datasignal_subscribe(mbl_mw_gyro_bmi160_get_packed_rotation_data_signal(board), bridge(obj: self)) { (context, data) in
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
                 let _self: MetaWearManager = bridge(ptr: context!)
-                _self.delegate?.gyroDataReceived(data: ["roll": Double(obj.x), "pitch": Double(obj.y), "yaw": Double(obj.x)])
+                _self.delegate?.receivedGyro(data: MetaWearGyro(roll: Double(obj.x), pitch: Double(obj.y), yaw: Double(obj.z)))
             }
             mbl_mw_gyro_bmi160_enable_rotation_sampling(board)
             mbl_mw_gyro_bmi160_start(board)

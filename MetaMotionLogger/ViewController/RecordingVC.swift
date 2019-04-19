@@ -42,7 +42,7 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
         }
     }
     @IBAction func eventLabelButtonTapped(_ sender: Any) {
-        FileWriter.sharedWriter.write(data: "label,1")
+        FileWriter.sharedWriter.write(data: "label,1,,")
     }
     
     @IBAction func segmentLabelChanged(_ sender: Any) {
@@ -51,15 +51,15 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
     
     // MARK: - Meta wear manager delegate
     
-    func accDataReceived(data: [String : Double]) {
+    func receivedAcc(data: MetaWearAcc) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data["x"]!, data["y"]!, data["z"]!) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data.x, data.y, data.z) as String)
         }
     }
     
-    func gyroDataReceived(data: [String : Double]) {
+    func receivedGyro(data: MetaWearGyro) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f", data["roll"]!, data["pitch"]!, data["yaw"]!) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f", data.roll, data.pitch, data.yaw) as String)
         }
     }
 }

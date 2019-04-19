@@ -104,7 +104,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Roll"
+                (cell.viewWithTag(1) as! UILabel).text = "X"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", rollValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
@@ -113,7 +113,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Pitch"
+                (cell.viewWithTag(1) as! UILabel).text = "Y"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", pitchValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
@@ -122,7 +122,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Yaw"
+                (cell.viewWithTag(1) as! UILabel).text = "Z"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", yawValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
@@ -139,43 +139,43 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func accDataReceived(data: [String : Double]) {
+    func receivedAcc(data: MetaWearAcc) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data["x"]!, data["y"]!, data["z"]!) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data.x, data.y, data.z) as String)
         }
         
-        accXValues.append(data["x"] ?? 0)
+        accXValues.append(data.x)
         if accXValues.count > Int(self.numberOfValuesToBeDisplayed) {
             accXValues.removeSubrange(0 ..< accXValues.count - Int(numberOfValuesToBeDisplayed))
         }
         
-        accYValues.append(data["y"] ?? 0)
+        accYValues.append(data.y)
         if accYValues.count > Int(self.numberOfValuesToBeDisplayed) {
             accYValues.removeSubrange(0 ..< accYValues.count - Int(numberOfValuesToBeDisplayed))
         }
         
-        accZValues.append(data["z"] ?? 0)
+        accZValues.append(data.z)
         if accZValues.count > Int(self.numberOfValuesToBeDisplayed) {
             accZValues.removeSubrange(0 ..< accZValues.count - Int(numberOfValuesToBeDisplayed))
         }
     }
     
-    func gyroDataReceived(data: [String : Double]) {
+    func receivedGyro(data: MetaWearGyro) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f", data["roll"]!, data["pitch"]!, data["yaw"]!) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f", data.roll, data.pitch, data.yaw) as String)
         }
         
-        rollValues.append(data["roll"] ?? 0)
+        rollValues.append(data.roll)
         if rollValues.count > Int(self.numberOfValuesToBeDisplayed) {
             rollValues.removeSubrange(0 ..< rollValues.count - Int(numberOfValuesToBeDisplayed))
         }
         
-        pitchValues.append(data["pitch"] ?? 0)
+        pitchValues.append(data.pitch)
         if pitchValues.count > Int(self.numberOfValuesToBeDisplayed) {
             pitchValues.removeSubrange(0 ..< pitchValues.count - Int(numberOfValuesToBeDisplayed))
         }
         
-        yawValues.append(data["yaw"] ?? 0)
+        yawValues.append(data.yaw)
         if yawValues.count > Int(self.numberOfValuesToBeDisplayed) {
             yawValues.removeSubrange(0 ..< yawValues.count - Int(numberOfValuesToBeDisplayed))
         }
