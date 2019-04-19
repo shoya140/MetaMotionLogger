@@ -11,12 +11,17 @@ import MetaWear
 import MetaWearCpp
 
 protocol MetaWearManagerDelegate: class {
-    func sensorDataReceived(data: [String:Float])
+    func accDataReceived(data: [String:Double])
+    func gyroDataReceived(data: [String:Double])
     func deviceConnected()
 }
 
 extension MetaWearManagerDelegate {
-    func sensorDataReceived(data: [String:Float]) {
+    func accDataReceived(data: [String:Double]) {
+        
+    }
+    
+    func gyroDataReceived(data: [String:Double]) {
         
     }
     
@@ -40,17 +45,28 @@ class MetaWearManager: NSObject {
     func connect(device: MetaWear) {
         self.device = device
         self.device?.connectAndSetup().continueOnSuccessWith {_ in
-            // configure ....
             let board = device.board
-            let signal = mbl_mw_acc_get_acceleration_data_signal(board)
-            mbl_mw_acc_get_acceleration_data_signal(board)
-            mbl_mw_datasignal_subscribe(signal, bridge(obj: self)) { (context, data) in
+            
+            mbl_mw_acc_set_odr(board, 100)
+            mbl_mw_acc_write_acceleration_config(board)
+            mbl_mw_datasignal_subscribe(mbl_mw_acc_get_packed_acceleration_data_signal(board), bridge(obj: self)) { (context, data) in
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
                 let _self: MetaWearManager = bridge(ptr: context!)
-                _self.delegate?.sensorDataReceived(data: ["x": obj.x, "y": obj.y, "z": obj.x])
+                _self.delegate?.accDataReceived(data: ["x": Double(obj.x), "y": Double(obj.y), "z": Double(obj.x)])
             }
             mbl_mw_acc_enable_acceleration_sampling(board)
             mbl_mw_acc_start(board)
+            
+            mbl_mw_gyro_bmi160_set_odr(board, MBL_MW_GYRO_BMI160_ODR_100Hz)
+            mbl_mw_gyro_bmi160_write_config(board)
+            mbl_mw_datasignal_subscribe(mbl_mw_gyro_bmi160_get_packed_rotation_data_signal(board), bridge(obj: self)) { (context, data) in
+                let obj: MblMwCartesianFloat = data!.pointee.valueAs()
+                let _self: MetaWearManager = bridge(ptr: context!)
+                _self.delegate?.gyroDataReceived(data: ["roll": Double(obj.x), "pitch": Double(obj.y), "yaw": Double(obj.x)])
+            }
+            mbl_mw_gyro_bmi160_enable_rotation_sampling(board)
+            mbl_mw_gyro_bmi160_start(board)
+            
             }
             .continueWith(.mainThread) {_ in
                 self.delegate?.deviceConnected()

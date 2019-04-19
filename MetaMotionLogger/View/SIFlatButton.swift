@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class SIFlatButton: UIButton {
+@IBDesignable class SIFlatButton: UIButton {
     
     @IBInspectable var inverse: Bool = false {
         didSet {

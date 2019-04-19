@@ -1,5 +1,5 @@
 //
-//  GraphView.swift
+//  SIGraphView.swift
 //  MetaMotionLogger
 //
 //  Created by Shoya Ishimaru on 2019.04.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class GraphView: UIView {
+@IBDesignable class SIGraphView: UIView {
     @IBInspectable var maximumValue: Double = 1000.0{
         didSet {
             self.setNeedsDisplay()
@@ -21,7 +21,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var minimumNumberOfValuesToBeDisplayed: UInt = 100{
+    @IBInspectable var minimumNumberOfValuesToBeDisplayed: UInt = 200{
         didSet {
             self.setNeedsDisplay()
         }
