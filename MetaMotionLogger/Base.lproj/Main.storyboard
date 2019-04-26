@@ -13,7 +13,6 @@
         <!--Navigation Controller-->
         <scene sceneID="PIR-TS-Ew4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hAv-Ix-NFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="6S6-Ii-gzU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YCe-av-lYS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -23,13 +22,13 @@
                         <segue destination="t32-TK-Bb4" kind="relationship" relationship="rootViewController" id="pwl-fU-RSi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAv-Ix-NFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="-583"/>
         </scene>
         <!--Pairing-->
         <scene sceneID="NPc-ly-lm1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oXb-VE-lls" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t32-TK-Bb4" customClass="PairingVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="94G-fZ-Tf2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -86,13 +85,13 @@
                         <outlet property="tableView" destination="anW-XP-N7W" id="dEl-uB-u0I"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXb-VE-lls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1546" y="-583"/>
         </scene>
         <!--MetaMotion Logger-->
         <scene sceneID="hUF-9c-ElV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cZJ-gd-3TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="0ey-hn-00F" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="MetaMotion Logger" id="LBY-qP-jUX">
                         <barButtonItem key="rightBarButtonItem" title="Pairing" id="Vm3-f2-O5W">
@@ -111,13 +110,13 @@
                         <segue destination="t3r-Ux-Ybk" kind="relationship" relationship="viewControllers" id="LBu-Bx-Ws3"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZJ-gd-3TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="307"/>
         </scene>
         <!--Monitoring-->
         <scene sceneID="Z0v-ev-6ge">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6e9-eB-f5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TKd-w2-Boa" customClass="MonitoringVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34f-IJ-R6C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -189,13 +188,13 @@
                         <outlet property="tableView" destination="cDA-9t-Vjg" id="Xa4-0p-wat"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6e9-eB-f5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560.8695652173915" y="167.41071428571428"/>
         </scene>
         <!--Recording-->
         <scene sceneID="ZZ0-dY-FMA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sEc-iK-aBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t3r-Ux-Ybk" customClass="RecordingVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pks-LD-yfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -223,23 +222,8 @@
                                     <action selector="switchRecording:" destination="t3r-Ux-Ybk" eventType="touchUpInside" id="uoZ-ce-rVS"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-qN-wKe">
-                                <rect key="frame" x="20" y="723" width="374" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="G4F-Ja-7Bu"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="0"/>
-                                    <segment title="1"/>
-                                    <segment title="2"/>
-                                    <segment title="3"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentLabelChanged:" destination="t3r-Ux-Ybk" eventType="valueChanged" id="LcA-uh-Bwd"/>
-                                </connections>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Xq-tSf" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
-                                <rect key="frame" x="20" y="248" width="374" height="424"/>
+                                <rect key="frame" x="20" y="248" width="374" height="545"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Event Label"/>
                                 <userDefinedRuntimeAttributes>
@@ -257,47 +241,31 @@
                                     <action selector="eventLabelButtonTapped:" destination="t3r-Ux-Ybk" eventType="touchUpInside" id="0b9-Zf-n9K"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segment Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8X-3O-Fde">
-                                <rect key="frame" x="20" y="692" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="SDx-g4-cfw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="t8X-3O-Fde" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="2HA-iy-ME3"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="2xJ-Qt-WL4"/>
                             <constraint firstItem="uyL-re-i1L" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="AHr-rS-GzN"/>
-                            <constraint firstItem="v6q-qN-wKe" firstAttribute="top" secondItem="t8X-3O-Fde" secondAttribute="bottom" constant="10" id="CNG-sC-1X5"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="Rxp-Xq-tSf" secondAttribute="trailing" constant="20" id="HO6-8a-k3w"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="uyL-re-i1L" secondAttribute="trailing" constant="20" id="KzQ-1W-TJ3"/>
                             <constraint firstItem="Rxp-Xq-tSf" firstAttribute="top" secondItem="uyL-re-i1L" secondAttribute="bottom" constant="20" id="Lef-xw-2nK"/>
-                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="v6q-qN-wKe" secondAttribute="trailing" constant="20" id="Pe7-eU-CD0"/>
                             <constraint firstItem="uyL-re-i1L" firstAttribute="top" secondItem="cpo-4N-90v" secondAttribute="top" constant="40" id="Wh4-m7-brv"/>
-                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="v6q-qN-wKe" secondAttribute="bottom" constant="40" id="XgZ-Hn-YFc"/>
-                            <constraint firstItem="v6q-qN-wKe" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="Xld-bg-O7X"/>
                             <constraint firstItem="Rxp-Xq-tSf" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="gb7-gP-gS0"/>
-                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="t8X-3O-Fde" secondAttribute="trailing" constant="20" id="m0a-4X-bHD"/>
-                            <constraint firstItem="t8X-3O-Fde" firstAttribute="top" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="mvb-j6-O0A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cpo-4N-90v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recording" image="icon-recording" id="gfy-JX-9kB"/>
                     <connections>
                         <outlet property="recordSwitchButton" destination="uyL-re-i1L" id="VSv-w6-cal"/>
-                        <outlet property="segmentSwitch" destination="v6q-qN-wKe" id="OqR-R8-oEJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEc-iK-aBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="858.48214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZAf-wS-R3c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="alT-cs-lVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="0nJ-zv-De4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5n4-Qx-WTO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -307,6 +275,7 @@
                         <segue destination="0ey-hn-00F" kind="relationship" relationship="rootViewController" id="zQp-1V-tY6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alT-cs-lVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314" y="307"/>
         </scene>

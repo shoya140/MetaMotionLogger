@@ -12,30 +12,30 @@ class FileWriter: NSObject {
     
     static let sharedWriter = FileWriter()
     var isRecording = false
-    var segmentLabel:Int = 0
+    var labelCount:Int = 0
     
     private var fileHandle: FileHandle?
     private var dateFormatter: DateFormatter!
-    private let kISO8601Format: String = "yyyy-MM-dd_HH-mm-ss"
+    private var textBuffer: [String]?
     
     override init() {
         super.init()
         
-        // create date formatter
         dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
         dateFormatter.timeZone = NSTimeZone.system
-        dateFormatter.dateFormat = kISO8601Format
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
     }
     
     func startRecording() {
-        self.isRecording = true
+        self.textBuffer = []
         
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
-        let currentFilePrefix = dateFormatter.string(from: NSDate() as Date)
+        let now = NSDate()
+        let datetimeString = dateFormatter.string(from: now as Date)
         
-        let filePath = documentDirectory + "/" + currentFilePrefix + ".csv"
-        let text = "#timestamp,type,value1,value2,value3,value4,segment\n"
+        let filePath = documentDirectory + "/" + datetimeString + ".csv"
+        let text = "type,value1,value2,value3,value4\n"
         do {
             try text.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
         } catch _ {
@@ -43,12 +43,26 @@ class FileWriter: NSObject {
         fileHandle = FileHandle(forWritingAtPath: filePath)
         fileHandle?.seekToEndOfFile()
         
+        self.isRecording = true
+        self.writeLabel(data: "start")
     }
     
     func stopRecording() {
+        self.writeLabel(data: "stop")
+        
+        if let handle = fileHandle, let b = textBuffer {
+            if b.count > 0 {
+                if let d = (b.joined().data(using: String.Encoding.utf8)) {
+                    handle.write(d)
+                }
+            }
+        }
+        
+        self.isRecording = false
+        
         fileHandle?.closeFile()
         fileHandle = nil
-        self.isRecording = false
+        self.textBuffer = nil
     }
     
     func write(data: String) {
@@ -56,11 +70,22 @@ class FileWriter: NSObject {
             return
         }
         
-        if let handle = fileHandle {
-            if let d = (NSDate().timeIntervalSince1970.description+","+data+","+segmentLabel.description+"\n").data(using: String.Encoding.utf8) {
-                handle.write(d)
+        textBuffer!.append(data)
+        if textBuffer?.count == 1000 {
+            if let handle = fileHandle, let b = textBuffer {
+                if let d = (b.joined().data(using: String.Encoding.utf8)) {
+                    handle.write(d)
+                }
             }
+            textBuffer = []
         }
+    }
+    
+    func writeLabel(data: String) {
+        labelCount += 1
+        let now = NSDate()
+        let datetimeString = dateFormatter.string(from: now as Date)
+        FileWriter.sharedWriter.write(data: "label,"+now.timeIntervalSince1970.description+","+datetimeString+","+String(labelCount)+","+data+"\n")
     }
     
 }

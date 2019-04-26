@@ -11,9 +11,6 @@ import UIKit
 class RecordingVC: UIViewController, MetaWearManagerDelegate {
     
     @IBOutlet weak var recordSwitchButton: SIFlatButton!
-    @IBOutlet weak var segmentSwitch: UISegmentedControl!
-    
-    private var label:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,40 +35,35 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
             FileWriter.sharedWriter.startRecording()
             self.recordSwitchButton.setTitle("Stop Recording", for: [])
             self.recordSwitchButton.inverse = true
-            self.segmentSwitch.selectedSegmentIndex = 0
         }
     }
     @IBAction func eventLabelButtonTapped(_ sender: Any) {
-        FileWriter.sharedWriter.write(data: "label,1,,")
-    }
-    
-    @IBAction func segmentLabelChanged(_ sender: Any) {
-        FileWriter.sharedWriter.segmentLabel = (sender as AnyObject).selectedSegmentIndex
+        FileWriter.sharedWriter.writeLabel(data: "")
     }
     
     // MARK: - Meta wear manager delegate
     
     func receivedAcc(data: MetaWearAcc) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f,", data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f,\n", data.x, data.y, data.z) as String)
         }
     }
     
     func receivedGyro(data: MetaWearGyro) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f,", data.roll, data.pitch, data.yaw) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f,\n", data.roll, data.pitch, data.yaw) as String)
         }
     }
     
     func receivedMag(data: MetaWearMag) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "mag,%f,%f,%f,", data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "mag,%f,%f,%f,\n", data.x, data.y, data.z) as String)
         }
     }
     
     func receivedQuat(data: MetaWearQuat) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "quat,%f,%f,%f,%f", data.w, data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "quat,%f,%f,%f,%f\n", data.w, data.x, data.y, data.z) as String)
         }
     }
 }

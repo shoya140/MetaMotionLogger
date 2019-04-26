@@ -125,7 +125,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func receivedAcc(data: MetaWearAcc) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f", data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f,\n", data.x, data.y, data.z) as String)
         }
         
         accXValues.append(data.x)
@@ -146,7 +146,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func receivedGyro(data: MetaWearGyro) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f,", data.roll, data.pitch, data.yaw) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f,\n", data.roll, data.pitch, data.yaw) as String)
         }
         
         rollValues.append(data.roll)
@@ -167,13 +167,13 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func receivedMag(data: MetaWearMag) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "mag,%f,%f,%f,", data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "mag,%f,%f,%f,\n", data.x, data.y, data.z) as String)
         }
     }
     
     func receivedQuat(data: MetaWearQuat) {
         if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "quat,%f,%f,%f,%f", data.w, data.x, data.y, data.z) as String)
+            FileWriter.sharedWriter.write(data: NSString(format: "quat,%f,%f,%f,%f\n", data.w, data.x, data.y, data.z) as String)
         }
         
         quatWValues.append(data.w)
