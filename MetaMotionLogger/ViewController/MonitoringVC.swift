@@ -82,7 +82,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "X:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accXValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accXValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -91,7 +91,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Y:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accYValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accYValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -100,7 +100,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Z:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accZValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accZValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -142,7 +142,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "W:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatWValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", quatWValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -151,7 +151,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "X:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatXValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", quatXValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -160,7 +160,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Y:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatYValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", quatYValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
@@ -169,7 +169,7 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Z:"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatZValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", quatZValues.last!)
                 (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
                 (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
                 (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz

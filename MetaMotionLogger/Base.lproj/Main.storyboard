@@ -145,7 +145,7 @@
                                                     <rect key="frame" x="10" y="5" width="396" height="110"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="X:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-DP-boA">
-                                                            <rect key="frame" x="251" y="4" width="80" height="21"/>
+                                                            <rect key="frame" x="266" y="4" width="80" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="4nQ-qE-ejb"/>
                                                                 <constraint firstAttribute="height" constant="21" id="K1q-m0-Vbs"/>
@@ -154,13 +154,13 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap1-mZ-0In">
-                                                            <rect key="frame" x="336" y="4" width="55" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap1-mZ-0In">
+                                                            <rect key="frame" x="346" y="4" width="45" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="55" id="YtK-jr-Dj7"/>
+                                                                <constraint firstAttribute="width" constant="45" id="YtK-jr-Dj7"/>
                                                                 <constraint firstAttribute="height" constant="21" id="pNy-RH-42n"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -171,7 +171,7 @@
                                                         <constraint firstItem="ap1-mZ-0In" firstAttribute="centerY" secondItem="Usg-DP-boA" secondAttribute="centerY" id="Dhn-sB-bDj"/>
                                                         <constraint firstItem="ap1-mZ-0In" firstAttribute="top" secondItem="kyv-de-noP" secondAttribute="top" constant="4" id="fLJ-ZH-C0A"/>
                                                         <constraint firstItem="Usg-DP-boA" firstAttribute="top" secondItem="kyv-de-noP" secondAttribute="top" constant="4" id="hep-TA-BLh"/>
-                                                        <constraint firstItem="ap1-mZ-0In" firstAttribute="leading" secondItem="Usg-DP-boA" secondAttribute="trailing" constant="5" id="w6x-NX-Hmb"/>
+                                                        <constraint firstItem="ap1-mZ-0In" firstAttribute="leading" secondItem="Usg-DP-boA" secondAttribute="trailing" id="w6x-NX-Hmb"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
