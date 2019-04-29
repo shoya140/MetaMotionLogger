@@ -46,26 +46,30 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 2
+            return 3
+        case 1:
+            return 3
         default:
-            return 1
+            return 4
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 120
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "BMI160"
+            return "BMI160 Accelerometer"
+        case 1:
+            return "BMI160 Gyroscope"
         default:
             return "BOSCH Sensor Fusion"
         }
@@ -77,35 +81,101 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Accelerometer"
-                (cell.viewWithTag(2) as! SIGraphView).maximumValue = 2
-                (cell.viewWithTag(2) as! SIGraphView).minimumValue = -2
-                (cell.viewWithTag(2) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
-                (cell.viewWithTag(2) as! SIGraphView).signals = [accXValues, accYValues, accZValues]
+                (cell.viewWithTag(1) as! UILabel).text = "X:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accXValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = accXValues
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Gyroscope"
-                (cell.viewWithTag(2) as! SIGraphView).maximumValue = 1000
-                (cell.viewWithTag(2) as! SIGraphView).minimumValue = -1000
-                (cell.viewWithTag(2) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
-                (cell.viewWithTag(2) as! SIGraphView).signals = [rollValues, pitchValues, yawValues]
+                (cell.viewWithTag(1) as! UILabel).text = "Y:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accYValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = accYValues
                 return cell
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Z:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", accZValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 2
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -2
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = accZValues
                 return cell
             }
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Quaternion"
-            (cell.viewWithTag(2) as! SIGraphView).maximumValue = 1
-            (cell.viewWithTag(2) as! SIGraphView).minimumValue = -1
-            (cell.viewWithTag(2) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
-            (cell.viewWithTag(2) as! SIGraphView).signals = [quatWValues, quatXValues, quatYValues, quatZValues,]
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Roll:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", rollValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = rollValues
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Pitch:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", pitchValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = pitchValues
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Yaw:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", yawValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1000
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = yawValues
+                return cell
+            }
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "W:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatWValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = quatWValues
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "X:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatXValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = quatXValues
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Y:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatYValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = quatYValues
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Z:"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.3f", quatZValues.last!)
+                (cell.viewWithTag(3) as! SIGraphView).maximumValue = 1
+                (cell.viewWithTag(3) as! SIGraphView).minimumValue = -1
+                (cell.viewWithTag(3) as! SIGraphView).minimumNumberOfValuesToBeDisplayed = numberOfValuesToBeDisplayed100Hz
+                (cell.viewWithTag(3) as! SIGraphView).values = quatZValues
+                return cell
+            }
         }
     }
     
@@ -116,17 +186,17 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         accXValues.append(data.x)
         if accXValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            accXValues.removeSubrange(0 ..< accXValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            accXValues.removeFirst()
         }
         
         accYValues.append(data.y)
         if accYValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            accYValues.removeSubrange(0 ..< accYValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            accYValues.removeFirst()
         }
         
         accZValues.append(data.z)
         if accZValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            accZValues.removeSubrange(0 ..< accZValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            accZValues.removeFirst()
         }
         
         DispatchQueue.main.async {
@@ -141,17 +211,17 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         rollValues.append(data.roll)
         if rollValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            rollValues.removeSubrange(0 ..< rollValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            rollValues.removeFirst()
         }
         
         pitchValues.append(data.pitch)
         if pitchValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            pitchValues.removeSubrange(0 ..< pitchValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            pitchValues.removeFirst()
         }
         
         yawValues.append(data.yaw)
         if yawValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            yawValues.removeSubrange(0 ..< yawValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            yawValues.removeFirst()
         }
     }
     
@@ -168,22 +238,22 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         quatWValues.append(data.w)
         if quatWValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            quatWValues.removeSubrange(0 ..< quatWValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            quatWValues.removeFirst()
         }
         
         quatXValues.append(data.x)
         if quatXValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            quatXValues.removeSubrange(0 ..< quatXValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            quatXValues.removeFirst()
         }
         
         quatYValues.append(data.y)
         if quatYValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            quatYValues.removeSubrange(0 ..< quatYValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            quatYValues.removeFirst()
         }
         
         quatZValues.append(data.z)
         if quatZValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
-            quatZValues.removeSubrange(0 ..< quatZValues.count - Int(numberOfValuesToBeDisplayed100Hz))
+            quatZValues.removeFirst()
         }
     }
 }
