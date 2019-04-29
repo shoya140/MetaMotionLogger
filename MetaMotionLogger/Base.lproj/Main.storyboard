@@ -240,7 +240,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Xq-tSf" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
-                                <rect key="frame" x="20" y="248" width="374" height="545"/>
+                                <rect key="frame" x="20" y="248" width="374" height="525"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Event Label"/>
                                 <userDefinedRuntimeAttributes>
@@ -261,7 +261,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="2xJ-Qt-WL4"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="40" id="2xJ-Qt-WL4"/>
                             <constraint firstItem="uyL-re-i1L" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="AHr-rS-GzN"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="Rxp-Xq-tSf" secondAttribute="trailing" constant="20" id="HO6-8a-k3w"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="uyL-re-i1L" secondAttribute="trailing" constant="20" id="KzQ-1W-TJ3"/>
