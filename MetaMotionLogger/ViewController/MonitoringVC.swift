@@ -28,8 +28,6 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     private var quatYValues: [Double] = [0.0]
     private var quatZValues: [Double] = [0.0]
     
-    private var timer: Timer?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,18 +43,6 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewWillAppear(animated)
         
         MetaWearManager.sharedObject.delegate = self
-        
-        startTimer()
-        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.didEnterBackgroundNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        stopTimer()
-        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -142,6 +128,10 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if accZValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
             accZValues.removeSubrange(0 ..< accZValues.count - Int(numberOfValuesToBeDisplayed100Hz))
         }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func receivedGyro(data: MetaWearGyro) {
@@ -196,15 +186,4 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             quatZValues.removeSubrange(0 ..< quatZValues.count - Int(numberOfValuesToBeDisplayed100Hz))
         }
     }
-    
-    @objc func startTimer () {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (Timer) in
-            self.tableView.reloadData()
-        }
-    }
-    
-    @objc func stopTimer () {
-        timer?.invalidate()
-    }
-    
 }
