@@ -200,7 +200,9 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            if UIApplication.shared.applicationState == .active  {
+                self.tableView.reloadData()
+            }
         }
     }
     
