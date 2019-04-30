@@ -218,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-re-i1L" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
-                                <rect key="frame" x="20" y="128" width="374" height="100"/>
+                                <rect key="frame" x="20" y="108" width="374" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7zS-Zi-LQB"/>
                                 </constraints>
@@ -240,7 +240,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Xq-tSf" customClass="SIFlatButton" customModule="MetaMotionLogger" customModuleProvider="target">
-                                <rect key="frame" x="20" y="248" width="374" height="525"/>
+                                <rect key="frame" x="20" y="228" width="374" height="524"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Event Label"/>
                                 <userDefinedRuntimeAttributes>
@@ -258,21 +258,34 @@
                                     <action selector="eventLabelButtonTapped:" destination="t3r-Ux-Ybk" eventType="touchUpInside" id="0b9-Zf-n9K"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery Level: 100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-9j-HL5">
+                                <rect key="frame" x="20" y="772" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7GK-62-IxI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="40" id="2xJ-Qt-WL4"/>
                             <constraint firstItem="uyL-re-i1L" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="AHr-rS-GzN"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="Rxp-Xq-tSf" secondAttribute="trailing" constant="20" id="HO6-8a-k3w"/>
                             <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="uyL-re-i1L" secondAttribute="trailing" constant="20" id="KzQ-1W-TJ3"/>
                             <constraint firstItem="Rxp-Xq-tSf" firstAttribute="top" secondItem="uyL-re-i1L" secondAttribute="bottom" constant="20" id="Lef-xw-2nK"/>
-                            <constraint firstItem="uyL-re-i1L" firstAttribute="top" secondItem="cpo-4N-90v" secondAttribute="top" constant="40" id="Wh4-m7-brv"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="trailing" secondItem="dvJ-9j-HL5" secondAttribute="trailing" constant="20" id="PoD-Sx-I3C"/>
+                            <constraint firstItem="cpo-4N-90v" firstAttribute="bottom" secondItem="dvJ-9j-HL5" secondAttribute="bottom" constant="20" id="UwE-3N-EZF"/>
+                            <constraint firstItem="dvJ-9j-HL5" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="VU9-UU-Ljp"/>
+                            <constraint firstItem="uyL-re-i1L" firstAttribute="top" secondItem="cpo-4N-90v" secondAttribute="top" constant="20" id="Wh4-m7-brv"/>
                             <constraint firstItem="Rxp-Xq-tSf" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="gb7-gP-gS0"/>
+                            <constraint firstItem="dvJ-9j-HL5" firstAttribute="top" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="rkZ-6t-1CM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cpo-4N-90v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recording" image="icon-recording" id="gfy-JX-9kB"/>
                     <connections>
+                        <outlet property="batterLevelLabel" destination="dvJ-9j-HL5" id="HZR-bP-ogU"/>
                         <outlet property="recordSwitchButton" destination="uyL-re-i1L" id="VSv-w6-cal"/>
                     </connections>
                 </viewController>

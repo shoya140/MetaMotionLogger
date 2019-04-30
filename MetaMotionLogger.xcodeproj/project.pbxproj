@@ -15,6 +15,7 @@
 		C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F02267B012007550C5 /* SIFlatButton.swift */; };
 		C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F32267B555007550C5 /* PairingVC.swift */; };
 		C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */; };
+		C6A2EFAF2277942D00D28621 /* MetaWearBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EFAE2277942D00D28621 /* MetaWearBattery.swift */; };
 		C6A44613226A16B4000EA1FC /* MetaWearAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */; };
 		C6A44615226A1B09000EA1FC /* MetaWearGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */; };
 		C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */; };
@@ -37,6 +38,7 @@
 		C67DA5F02267B012007550C5 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
 		C67DA5F32267B555007550C5 /* PairingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingVC.swift; sourceTree = "<group>"; };
 		C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
+		C6A2EFAE2277942D00D28621 /* MetaWearBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearBattery.swift; sourceTree = "<group>"; };
 		C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearAcc.swift; sourceTree = "<group>"; };
 		C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearGyro.swift; sourceTree = "<group>"; };
 		C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearMag.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				C6A44614226A1B09000EA1FC /* MetaWearGyro.swift */,
 				C6A44616226A2DF5000EA1FC /* MetaWearMag.swift */,
 				C6A44618226A3E63000EA1FC /* MetaWearQuat.swift */,
+				C6A2EFAE2277942D00D28621 /* MetaWearBattery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */,
 				C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */,
 				C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */,
+				C6A2EFAF2277942D00D28621 /* MetaWearBattery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

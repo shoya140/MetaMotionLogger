@@ -11,6 +11,7 @@ import UIKit
 class RecordingVC: UIViewController, MetaWearManagerDelegate {
     
     @IBOutlet weak var recordSwitchButton: SIFlatButton!
+    @IBOutlet weak var batterLevelLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
         super.viewWillAppear(animated)
         
         MetaWearManager.sharedObject.delegate = self
+        self.batterLevelLabel.text = String(format: "Battery Level: %d%%", MetaWearManager.sharedObject.batteryLevel)
     }
     
     @IBAction func switchRecording(_ sender: Any) {
@@ -37,33 +39,12 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
             self.recordSwitchButton.inverse = true
         }
     }
+    
     @IBAction func eventLabelButtonTapped(_ sender: Any) {
         FileWriter.sharedWriter.writeLabel(data: "")
     }
     
-    // MARK: - Meta wear manager delegate
-    
-    func receivedAcc(data: MetaWearAcc) {
-        if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "acc,%f,%f,%f,\n", data.x, data.y, data.z) as String)
-        }
-    }
-    
-    func receivedGyro(data: MetaWearGyro) {
-        if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "gyro,%f,%f,%f,\n", data.roll, data.pitch, data.yaw) as String)
-        }
-    }
-    
-    func receivedMag(data: MetaWearMag) {
-        if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "mag,%f,%f,%f,\n", data.x, data.y, data.z) as String)
-        }
-    }
-    
-    func receivedQuat(data: MetaWearQuat) {
-        if FileWriter.sharedWriter.isRecording {
-            FileWriter.sharedWriter.write(data: NSString(format: "quat,%f,%f,%f,%f\n", data.w, data.x, data.y, data.z) as String)
-        }
+    func receivedBattery(data: MetaWearBattery) {
+        self.batterLevelLabel.text = String(format: "Battery Level: %d%%", data.charge)
     }
 }
