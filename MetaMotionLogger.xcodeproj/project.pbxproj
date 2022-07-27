@@ -13,6 +13,14 @@
 		C6602FFC2891E51C004526AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6602FEA2891E51B004526AD /* ContentView.swift */; };
 		C6602FFD2891E51C004526AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6602FEB2891E51C004526AD /* Assets.xcassets */; };
 		C6602FFE2891E51C004526AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6602FEB2891E51C004526AD /* Assets.xcassets */; };
+		C6AAD6992891EE7C008220FA /* MetaWear in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD6982891EE7C008220FA /* MetaWear */; };
+		C6AAD69B2891EE7C008220FA /* MetaWearCpp in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD69A2891EE7C008220FA /* MetaWearCpp */; };
+		C6AAD69D2891EE7C008220FA /* MetaWearFirmware in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD69C2891EE7C008220FA /* MetaWearFirmware */; };
+		C6AAD69F2891EE7C008220FA /* MetaWearSync in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD69E2891EE7C008220FA /* MetaWearSync */; };
+		C6AAD6A52891F08D008220FA /* MetaWear in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD6A42891F08D008220FA /* MetaWear */; };
+		C6AAD6A72891F08D008220FA /* MetaWearCpp in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD6A62891F08D008220FA /* MetaWearCpp */; };
+		C6AAD6A92891F08D008220FA /* MetaWearFirmware in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD6A82891F08D008220FA /* MetaWearFirmware */; };
+		C6AAD6AB2891F08D008220FA /* MetaWearSync in Frameworks */ = {isa = PBXBuildFile; productRef = C6AAD6AA2891F08D008220FA /* MetaWearSync */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,8 @@
 		C6602FF02891E51C004526AD /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6602FF62891E51C004526AD /* MetaMotionLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaMotionLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6602FF82891E51C004526AD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		C6AAD6A02891EE92008220FA /* MetaMotionLogger--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetaMotionLogger--iOS--Info.plist"; sourceTree = "<group>"; };
+		C6AAD6A22891EF3C008220FA /* MetaMotionLogger (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MetaMotionLogger (iOS).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AAD69B2891EE7C008220FA /* MetaWearCpp in Frameworks */,
+				C6AAD6992891EE7C008220FA /* MetaWear in Frameworks */,
+				C6AAD69D2891EE7C008220FA /* MetaWearFirmware in Frameworks */,
+				C6AAD69F2891EE7C008220FA /* MetaWearSync in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +50,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AAD6A72891F08D008220FA /* MetaWearCpp in Frameworks */,
+				C6AAD6A52891F08D008220FA /* MetaWear in Frameworks */,
+				C6AAD6A92891F08D008220FA /* MetaWearFirmware in Frameworks */,
+				C6AAD6AB2891F08D008220FA /* MetaWearSync in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				C6602FE82891E51B004526AD /* Shared */,
+				C6AAD6A12891EF0C008220FA /* iOS */,
 				C6602FF72891E51C004526AD /* macOS */,
 				C6602FF12891E51C004526AD /* Products */,
+				C6AAD6A32891F08D008220FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +98,22 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		C6AAD6A12891EF0C008220FA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAD6A22891EF3C008220FA /* MetaMotionLogger (iOS).entitlements */,
+				C6AAD6A02891EE92008220FA /* MetaMotionLogger--iOS--Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		C6AAD6A32891F08D008220FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +130,12 @@
 			dependencies = (
 			);
 			name = "MetaMotionLogger (iOS)";
+			packageProductDependencies = (
+				C6AAD6982891EE7C008220FA /* MetaWear */,
+				C6AAD69A2891EE7C008220FA /* MetaWearCpp */,
+				C6AAD69C2891EE7C008220FA /* MetaWearFirmware */,
+				C6AAD69E2891EE7C008220FA /* MetaWearSync */,
+			);
 			productName = "MetaMotionLogger (iOS)";
 			productReference = C6602FF02891E51C004526AD /* MetaMotionLogger.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +153,12 @@
 			dependencies = (
 			);
 			name = "MetaMotionLogger (macOS)";
+			packageProductDependencies = (
+				C6AAD6A42891F08D008220FA /* MetaWear */,
+				C6AAD6A62891F08D008220FA /* MetaWearCpp */,
+				C6AAD6A82891F08D008220FA /* MetaWearFirmware */,
+				C6AAD6AA2891F08D008220FA /* MetaWearSync */,
+			);
 			productName = "MetaMotionLogger (macOS)";
 			productReference = C6602FF62891E51C004526AD /* MetaMotionLogger.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +190,9 @@
 				Base,
 			);
 			mainGroup = C6602FE32891E51B004526AD;
+			packageReferences = (
+				C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */,
+			);
 			productRefGroup = C6602FF12891E51C004526AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,10 +358,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS/MetaMotionLogger (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS/MetaMotionLogger--iOS--Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to nearby MetaWear sensors.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect to nearby MetaWear sensors.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,10 +392,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS/MetaMotionLogger (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS/MetaMotionLogger--iOS--Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to nearby MetaWear sensors.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect to nearby MetaWear sensors.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -370,8 +431,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to nearby MetaWear sensors.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect to nearby MetaWear sensors.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,8 +460,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to nearby MetaWear sensors.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect to nearby MetaWear sensors.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +511,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mbientlab/MetaWear-Swift-Combine-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6AAD6982891EE7C008220FA /* MetaWear */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWear;
+		};
+		C6AAD69A2891EE7C008220FA /* MetaWearCpp */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearCpp;
+		};
+		C6AAD69C2891EE7C008220FA /* MetaWearFirmware */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearFirmware;
+		};
+		C6AAD69E2891EE7C008220FA /* MetaWearSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearSync;
+		};
+		C6AAD6A42891F08D008220FA /* MetaWear */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWear;
+		};
+		C6AAD6A62891F08D008220FA /* MetaWearCpp */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearCpp;
+		};
+		C6AAD6A82891F08D008220FA /* MetaWearFirmware */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearFirmware;
+		};
+		C6AAD6AA2891F08D008220FA /* MetaWearSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AAD6972891EE7C008220FA /* XCRemoteSwiftPackageReference "MetaWear-Swift-Combine-SDK" */;
+			productName = MetaWearSync;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C6602FE42891E51B004526AD /* Project object */;
 }
