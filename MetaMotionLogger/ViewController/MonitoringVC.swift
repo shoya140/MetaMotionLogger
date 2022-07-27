@@ -67,9 +67,9 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "BMI160 Accelerometer"
+            return "BMI270 Accelerometer"
         case 1:
-            return "BMI160 Gyroscope"
+            return "BMI270 Gyroscope"
         default:
             return "BOSCH Sensor Fusion"
         }

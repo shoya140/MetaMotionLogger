@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0nJ-zv-De4">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0nJ-zv-De4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,14 +37,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="2aM-Zl-WWL" detailTextLabel="WnZ-zR-i5h" style="IBUITableViewCellStyleValue1" id="wbn-m6-7oN">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbn-m6-7oN" id="3uO-kY-kgA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2aM-Zl-WWL">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="12" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -65,6 +63,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xFl-ic-gAk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="anW-XP-N7W" firstAttribute="leading" secondItem="xFl-ic-gAk" secondAttribute="leading" id="BhP-p3-kEv"/>
@@ -72,7 +71,6 @@
                             <constraint firstItem="xFl-ic-gAk" firstAttribute="trailing" secondItem="anW-XP-N7W" secondAttribute="trailing" id="Lou-bk-pH5"/>
                             <constraint firstItem="xFl-ic-gAk" firstAttribute="bottom" secondItem="anW-XP-N7W" secondAttribute="bottom" id="a2W-re-TxN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xFl-ic-gAk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pairing" id="LSs-Q4-dIP">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="y77-WB-Zmn">
@@ -96,7 +94,7 @@
                     <navigationItem key="navigationItem" title="MetaMotion Logger" id="LBY-qP-jUX">
                         <barButtonItem key="rightBarButtonItem" title="Pairing" id="Vm3-f2-O5W">
                             <connections>
-                                <segue destination="6S6-Ii-gzU" kind="presentation" id="cNk-sG-c45"/>
+                                <segue destination="6S6-Ii-gzU" kind="presentation" modalPresentationStyle="fullScreen" id="cNk-sG-c45"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,7 +125,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="70o-XD-Ohw">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="70o-XD-Ohw" id="VQP-hp-SbY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -135,7 +133,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GraphCell" rowHeight="120" id="a5L-H7-cl6">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a5L-H7-cl6" id="g2y-AG-tt3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -191,6 +189,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jjL-PH-SHx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jjL-PH-SHx" firstAttribute="trailing" secondItem="cDA-9t-Vjg" secondAttribute="trailing" id="11v-Nh-foc"/>
@@ -198,7 +197,6 @@
                             <constraint firstItem="jjL-PH-SHx" firstAttribute="bottom" secondItem="cDA-9t-Vjg" secondAttribute="bottom" id="SZZ-5G-Tca"/>
                             <constraint firstItem="cDA-9t-Vjg" firstAttribute="leading" secondItem="jjL-PH-SHx" secondAttribute="leading" id="Ue7-p2-Hi6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jjL-PH-SHx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Monitoring" image="icon-realtime" id="ftx-VH-mKp"/>
                     <connections>
@@ -268,6 +266,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cpo-4N-90v"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uyL-re-i1L" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="AHr-rS-GzN"/>
@@ -281,7 +280,6 @@
                             <constraint firstItem="Rxp-Xq-tSf" firstAttribute="leading" secondItem="cpo-4N-90v" secondAttribute="leading" constant="20" id="gb7-gP-gS0"/>
                             <constraint firstItem="dvJ-9j-HL5" firstAttribute="top" secondItem="Rxp-Xq-tSf" secondAttribute="bottom" constant="20" id="rkZ-6t-1CM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cpo-4N-90v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recording" image="icon-recording" id="gfy-JX-9kB"/>
                     <connections>
@@ -310,6 +308,14 @@
             <point key="canvasLocation" x="-314" y="307"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Rxp-Xq-tSf">
+            <size key="intrinsicContentSize" width="111" height="39"/>
+        </designable>
+        <designable name="uyL-re-i1L">
+            <size key="intrinsicContentSize" width="137" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="icon-realtime" width="30" height="30"/>
         <image name="icon-recording" width="30" height="30"/>

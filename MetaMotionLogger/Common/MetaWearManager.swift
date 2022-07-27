@@ -76,9 +76,9 @@ class MetaWearManager: NSObject {
             mbl_mw_acc_enable_acceleration_sampling(board)
             mbl_mw_acc_start(board)
             
-            mbl_mw_gyro_bmi160_set_odr(board, MBL_MW_GYRO_BMI160_ODR_100Hz)
-            mbl_mw_gyro_bmi160_write_config(board)
-            mbl_mw_datasignal_subscribe(mbl_mw_gyro_bmi160_get_packed_rotation_data_signal(board), bridge(obj: self)) { (context, data) in
+            mbl_mw_gyro_bmi270_set_odr(board, MBL_MW_GYRO_BOSCH_ODR_100Hz)
+            mbl_mw_gyro_bmi270_write_config(board)
+            mbl_mw_datasignal_subscribe(mbl_mw_gyro_bmi270_get_packed_rotation_data_signal(board), bridge(obj: self)) { (context, data) in
                 let obj: MblMwCartesianFloat = data!.pointee.valueAs()
                 let d = MetaWearGyro(roll: Double(obj.x), pitch: Double(obj.y), yaw: Double(obj.z))
                 if FileWriter.sharedWriter.isRecording {
@@ -86,8 +86,8 @@ class MetaWearManager: NSObject {
                 }
                 (bridge(ptr: context!) as MetaWearManager).delegate?.receivedGyro(data: d)
             }
-            mbl_mw_gyro_bmi160_enable_rotation_sampling(board)
-            mbl_mw_gyro_bmi160_start(board)
+            mbl_mw_gyro_bmi270_enable_rotation_sampling(board)
+            mbl_mw_gyro_bmi270_start(board)
             
             mbl_mw_mag_bmm150_set_preset(board, MBL_MW_MAG_BMM150_PRESET_REGULAR)
             mbl_mw_datasignal_subscribe(mbl_mw_mag_bmm150_get_packed_b_field_data_signal(board) , bridge(obj: self)) { (context, data) in
