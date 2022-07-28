@@ -30,7 +30,7 @@ import UIKit
         } else {
             setTitleColor(buttonColor, for: [])
             setTitleColor(UIColor.white, for: .highlighted)
-            backgroundColor = UIColor.white
+            backgroundColor = UIColor.clear
         }
         
         setTitleShadowColor(UIColor.clear, for: [])
@@ -54,7 +54,7 @@ import UIKit
         didSet {
             if isHighlighted {
                 if inverse {
-                    backgroundColor = UIColor.white
+                    backgroundColor = UIColor.clear
                 } else {
                     backgroundColor = buttonColor
                 }
@@ -62,7 +62,7 @@ import UIKit
                 if inverse {
                     backgroundColor = buttonColor
                 } else {
-                    backgroundColor = UIColor.white
+                    backgroundColor = UIColor.clear
                 }
             }
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ABC2DA82252A8D376860A653 /* Pods_MetaMotionLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E684A60C1E5231DD93F26A9A /* Pods_MetaMotionLogger.framework */; };
+		C66D6EF9289206B300BA3C71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D6EF8289206B300BA3C71 /* SceneDelegate.swift */; };
 		C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67259A52269E065006AE2FE /* RecordingVC.swift */; };
 		C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */; };
 		C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5ED2267B00B007550C5 /* FileWriter.swift */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		2994189C94DED78FFE101548 /* Pods-MetaMotionLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.release.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.release.xcconfig"; sourceTree = "<group>"; };
 		3711F7FD6563C55015F33B54 /* Pods-MetaMotionLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.debug.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		C66D6EF72892061B00BA3C71 /* MetaMotionLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetaMotionLogger.entitlements; sourceTree = "<group>"; };
+		C66D6EF8289206B300BA3C71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C67259A52269E065006AE2FE /* RecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingVC.swift; sourceTree = "<group>"; };
 		C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C67DA5ED2267B00B007550C5 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
@@ -153,12 +156,14 @@
 		C6AA73F02266B911008042C7 /* MetaMotionLogger */ = {
 			isa = PBXGroup;
 			children = (
+				C66D6EF72892061B00BA3C71 /* MetaMotionLogger.entitlements */,
 				C6A44611226A1684000EA1FC /* Model */,
 				C67DA5EA2267AFEF007550C5 /* Common */,
 				C67DA5E92267AFD6007550C5 /* Extensions */,
 				C67DA5E82267AFCE007550C5 /* ViewController */,
 				C67DA5E72267AFC0007550C5 /* View */,
 				C6AA73F12266B911008042C7 /* AppDelegate.swift */,
+				C66D6EF8289206B300BA3C71 /* SceneDelegate.swift */,
 				C6AA73F52266B911008042C7 /* Main.storyboard */,
 				C6AA73F82266B912008042C7 /* Assets.xcassets */,
 				C6AA73FA2266B912008042C7 /* LaunchScreen.storyboard */,
@@ -294,6 +299,7 @@
 				C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */,
 				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
 				C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */,
+				C66D6EF9289206B300BA3C71 /* SceneDelegate.swift in Sources */,
 				C6D0754A226979D300D35C2A /* MonitoringVC.swift in Sources */,
 				C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */,
 				C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */,
@@ -450,6 +456,7 @@
 			baseConfigurationReference = 3711F7FD6563C55015F33B54 /* Pods-MetaMotionLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetaMotionLogger/MetaMotionLogger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -463,6 +470,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.shoya.MetaMotionLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -473,6 +483,7 @@
 			baseConfigurationReference = 2994189C94DED78FFE101548 /* Pods-MetaMotionLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetaMotionLogger/MetaMotionLogger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H6D4RUJ3S;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -486,6 +497,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.shoya.MetaMotionLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
