@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MetaWear
 
 class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MetaWearManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var device: MetaWear!
     
     private var numberOfValuesToBeDisplayed100Hz: UInt = 800
     private var numberOfValuesToBeDisplayed10Hz: UInt = 80
@@ -37,12 +39,18 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
+        
+        if device != nil {
+            self.title = device.mac
+        }
+        
+        MetaWearManager.sharedObject.delegates.append(self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        MetaWearManager.sharedObject.delegate = self
+        MetaWearManager.sharedObject.delegates.remove(self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

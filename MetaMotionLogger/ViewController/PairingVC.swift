@@ -21,22 +21,28 @@ class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let navBar = self.navigationController!.navigationBar
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        navBar.scrollEdgeAppearance = appearance
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        MetaWearManager.sharedObject.delegates.append(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scannerModel = ScannerModel(delegate: self as ScannerModelDelegate)
         scannerModel.isScanning = true
-        
-        MetaWearManager.sharedObject.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         scannerModel.isScanning = false
+        MetaWearManager.sharedObject.delegates.remove(self)
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -94,8 +100,6 @@ class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     // MARK: - Meta wear manager delegate
     
     func deviceConnected() {
-        self.dismissHUD(completion: {
-            self.dismiss(animated: true, completion: nil)
-        })
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -16,13 +16,19 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MetaWearManager.sharedObject.delegates.append(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        MetaWearManager.sharedObject.delegate = self
         self.batterLevelLabel.text = String(format: "Battery Level: %d%%", MetaWearManager.sharedObject.batteryLevel)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        MetaWearManager.sharedObject.delegates.remove(self)
     }
     
     @IBAction func switchRecording(_ sender: Any) {
@@ -31,7 +37,7 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
             self.recordSwitchButton.setTitle("Start Recording", for: [])
             self.recordSwitchButton.inverse = false
         } else {
-            if MetaWearManager.sharedObject.device == nil {
+            if MetaWearManager.sharedObject.devices.count == 0 {
                 return
             }
             FileWriter.sharedWriter.startRecording()

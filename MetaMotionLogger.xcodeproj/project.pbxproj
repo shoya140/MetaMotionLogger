@@ -15,6 +15,8 @@
 		C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EF2267B012007550C5 /* SIGraphView.swift */; };
 		C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F02267B012007550C5 /* SIFlatButton.swift */; };
 		C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5F32267B555007550C5 /* PairingVC.swift */; };
+		C694A3312892F08D00B9AC17 /* RMWeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694A3302892F08D00B9AC17 /* RMWeakSet.swift */; };
+		C69B0CFB2892CEF50055FD83 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69B0CFA2892CEF50055FD83 /* MenuVC.swift */; };
 		C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */; };
 		C6A2EFAF2277942D00D28621 /* MetaWearBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EFAE2277942D00D28621 /* MetaWearBattery.swift */; };
 		C6A44613226A16B4000EA1FC /* MetaWearAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */; };
@@ -40,6 +42,8 @@
 		C67DA5EF2267B012007550C5 /* SIGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIGraphView.swift; sourceTree = "<group>"; };
 		C67DA5F02267B012007550C5 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
 		C67DA5F32267B555007550C5 /* PairingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingVC.swift; sourceTree = "<group>"; };
+		C694A3302892F08D00B9AC17 /* RMWeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMWeakSet.swift; sourceTree = "<group>"; };
+		C69B0CFA2892CEF50055FD83 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		C6A02AC12267E38900EA2DEA /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		C6A2EFAE2277942D00D28621 /* MetaWearBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearBattery.swift; sourceTree = "<group>"; };
 		C6A44612226A16B4000EA1FC /* MetaWearAcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaWearAcc.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				C67DA5F32267B555007550C5 /* PairingVC.swift */,
 				C6D07549226979D300D35C2A /* MonitoringVC.swift */,
 				C67259A52269E065006AE2FE /* RecordingVC.swift */,
+				C69B0CFA2892CEF50055FD83 /* MenuVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			children = (
 				C67DA5ED2267B00B007550C5 /* FileWriter.swift */,
 				C6D075462269726100D35C2A /* MetaWearManager.swift */,
+				C694A3302892F08D00B9AC17 /* RMWeakSet.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				C67DA5F22267B012007550C5 /* SIFlatButton.swift in Sources */,
 				C6A44613226A16B4000EA1FC /* MetaWearAcc.swift in Sources */,
 				C6D075472269726100D35C2A /* MetaWearManager.swift in Sources */,
+				C69B0CFB2892CEF50055FD83 /* MenuVC.swift in Sources */,
 				C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */,
 				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
 				C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */,
@@ -308,6 +315,7 @@
 				C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */,
 				C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */,
 				C6A2EFAF2277942D00D28621 /* MetaWearBattery.swift in Sources */,
+				C694A3312892F08D00B9AC17 /* RMWeakSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
