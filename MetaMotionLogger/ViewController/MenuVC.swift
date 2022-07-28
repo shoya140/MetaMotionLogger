@@ -58,7 +58,10 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Meta
     // MARK: - Table view delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if activeIndexPath == indexPath {
+        if traitCollection.horizontalSizeClass == .compact {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        if traitCollection.horizontalSizeClass != .compact && activeIndexPath == indexPath {
             return
         }
         let vc = storyboard?.instantiateViewController(identifier: "MonitoringVC") as! MonitoringVC
