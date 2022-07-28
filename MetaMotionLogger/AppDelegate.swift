@@ -14,9 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let themeColor = UIColor.hex(code: "#3baebf", alpha: 1.0)
-//        UINavigationBar.appearance().barTintColor = themeColor
-//        UINavigationBar.appearance().tintColor = UIColor.white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = themeColor
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        let buttonAppearance = UIBarButtonItemAppearance()
+        buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.buttonAppearance = buttonAppearance
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        
         UITabBar.appearance().tintColor = themeColor
         UISegmentedControl.appearance().tintColor = themeColor
         
