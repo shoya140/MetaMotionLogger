@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="1366" y="2518"/>
         </scene>
-        <!--View Controller-->
+        <!--PlaceholderVC-->
         <scene sceneID="hDE-yL-bEd">
             <objects>
-                <viewController id="rxi-om-Xb1" sceneMemberID="viewController">
+                <viewController id="rxi-om-Xb1" customClass="PlaceholderVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Grp-Ri-0p7">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="577" y="2518"/>
         </scene>
-        <!--Device List-->
+        <!--MenuVC-->
         <scene sceneID="NK4-8Q-nL9">
             <objects>
                 <viewController id="B2N-9j-Hzq" customClass="MenuVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,17 +187,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="G03-lr-obZ" style="IBUITableViewCellStyleDefault" id="9xc-Md-bL2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="RgU-ae-7rb" style="IBUITableViewCellStyleDefault" id="eam-ex-hgO">
                                         <rect key="frame" x="20" y="55.333332061767578" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9xc-Md-bL2" id="uuU-KV-mb5">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eam-ex-hgO" id="maw-hb-WQZ">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G03-lr-obZ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RgU-ae-7rb">
                                                     <rect key="frame" x="20" y="0.0" width="348" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -217,7 +217,7 @@
                             <constraint firstAttribute="bottom" secondItem="hxO-96-ph5" secondAttribute="bottom" constant="34" id="XHR-xq-t8l"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Device List" id="cfW-ET-xMO">
+                    <navigationItem key="navigationItem" id="cfW-ET-xMO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j7b-on-4l3">
                             <connections>
                                 <action selector="pairingButtonTapped:" destination="B2N-9j-Hzq" id="cKT-Vi-Tlp"/>
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txK-vD-bXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365.4205607476636" y="1805.831533477322"/>
+            <point key="canvasLocation" x="1364.6484375" y="1804.8316251830161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QUP-iB-s8e">
@@ -248,10 +248,10 @@
             </objects>
             <point key="canvasLocation" x="577" y="1806"/>
         </scene>
-        <!--Split View Controller-->
+        <!--SplitVC-->
         <scene sceneID="VVL-ue-4Qu">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" primaryBackgroundStyle="sidebar" id="UEg-8g-yYo" sceneMemberID="viewController">
+                <splitViewController allowDoubleColumnStyle="YES" primaryBackgroundStyle="sidebar" id="UEg-8g-yYo" customClass="SplitVC" customModule="MetaMotionLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="8eU-pq-IgF" kind="relationship" relationship="masterViewController" id="MKO-pd-bL9"/>
                         <segue destination="rxi-om-Xb1" kind="relationship" relationship="detailViewController" id="gfG-41-ZVP"/>

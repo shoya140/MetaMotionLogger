@@ -33,7 +33,13 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Meta
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        connecedDevices = MetaWearManager.sharedObject.devices
+        connecedDevices = MetaWearManager.sharedObject.devices.map{ $0.device }
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
     }
     
     @IBAction func pairingButtonTapped(_ sender: Any) {
@@ -43,6 +49,21 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Meta
     }
     
     // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch connecedDevices.count {
+        case 0:
+            return ""
+        case 1:
+            return "Conneced Device"
+        default:
+            return "Conneced Devices"
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return connecedDevices.count
@@ -58,12 +79,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Meta
     // MARK: - Table view delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if traitCollection.horizontalSizeClass == .compact {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-        if traitCollection.horizontalSizeClass != .compact && activeIndexPath == indexPath {
-            return
-        }
         let vc = storyboard?.instantiateViewController(identifier: "MonitoringVC") as! MonitoringVC
         vc.device = self.connecedDevices[indexPath.row]
         let nvc = UINavigationController(rootViewController: vc)
@@ -73,8 +88,8 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Meta
     
     // MARK: - MetaWearManager delegate
     
-    func deviceConnected() {
-        connecedDevices = MetaWearManager.sharedObject.devices
+    func deviceConnected(device: MetaWear) {
+        connecedDevices = MetaWearManager.sharedObject.devices.map{ $0.device }
         tableView.reloadData()
     }
     

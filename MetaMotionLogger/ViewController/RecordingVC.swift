@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MetaWear
 
 class RecordingVC: UIViewController, MetaWearManagerDelegate {
     
@@ -21,8 +22,6 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.batterLevelLabel.text = String(format: "Battery Level: %d%%", MetaWearManager.sharedObject.batteryLevel)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +49,7 @@ class RecordingVC: UIViewController, MetaWearManagerDelegate {
         FileWriter.sharedWriter.writeLabel(data: "")
     }
     
-    func receivedBattery(data: MetaWearBattery) {
+    func receivedBattery(data: MetaWearBattery, device: MetaWear) {
         self.batterLevelLabel.text = String(format: "Battery Level: %d%%", data.charge)
     }
 }

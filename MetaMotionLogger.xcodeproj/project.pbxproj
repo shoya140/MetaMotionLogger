@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ABC2DA82252A8D376860A653 /* Pods_MetaMotionLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E684A60C1E5231DD93F26A9A /* Pods_MetaMotionLogger.framework */; };
+		C64309F52893C3B100BABBC7 /* PlaceholderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64309F42893C3B100BABBC7 /* PlaceholderVC.swift */; };
+		C64309F72893C3BF00BABBC7 /* SplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64309F62893C3BF00BABBC7 /* SplitVC.swift */; };
 		C66D6EF9289206B300BA3C71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D6EF8289206B300BA3C71 /* SceneDelegate.swift */; };
 		C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67259A52269E065006AE2FE /* RecordingVC.swift */; };
 		C67DA5EC2267B005007550C5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DA5EB2267B005007550C5 /* UIColor+Hex.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		2994189C94DED78FFE101548 /* Pods-MetaMotionLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.release.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.release.xcconfig"; sourceTree = "<group>"; };
 		3711F7FD6563C55015F33B54 /* Pods-MetaMotionLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetaMotionLogger.debug.xcconfig"; path = "Target Support Files/Pods-MetaMotionLogger/Pods-MetaMotionLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		C64309F42893C3B100BABBC7 /* PlaceholderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderVC.swift; sourceTree = "<group>"; };
+		C64309F62893C3BF00BABBC7 /* SplitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitVC.swift; sourceTree = "<group>"; };
 		C66D6EF72892061B00BA3C71 /* MetaMotionLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetaMotionLogger.entitlements; sourceTree = "<group>"; };
 		C66D6EF8289206B300BA3C71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C67259A52269E065006AE2FE /* RecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingVC.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				C6D07549226979D300D35C2A /* MonitoringVC.swift */,
 				C67259A52269E065006AE2FE /* RecordingVC.swift */,
 				C69B0CFA2892CEF50055FD83 /* MenuVC.swift */,
+				C64309F42893C3B100BABBC7 /* PlaceholderVC.swift */,
+				C64309F62893C3BF00BABBC7 /* SplitVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				C6A44613226A16B4000EA1FC /* MetaWearAcc.swift in Sources */,
 				C6D075472269726100D35C2A /* MetaWearManager.swift in Sources */,
 				C69B0CFB2892CEF50055FD83 /* MenuVC.swift in Sources */,
+				C64309F72893C3BF00BABBC7 /* SplitVC.swift in Sources */,
 				C67DA5F12267B012007550C5 /* SIGraphView.swift in Sources */,
 				C67DA5EE2267B00B007550C5 /* FileWriter.swift in Sources */,
 				C67259A62269E065006AE2FE /* RecordingVC.swift in Sources */,
@@ -312,6 +319,7 @@
 				C6A02AC22267E38900EA2DEA /* UIViewController+HUD.swift in Sources */,
 				C6A44619226A3E63000EA1FC /* MetaWearQuat.swift in Sources */,
 				C6AA73F22266B911008042C7 /* AppDelegate.swift in Sources */,
+				C64309F52893C3B100BABBC7 /* PlaceholderVC.swift in Sources */,
 				C6A44617226A2DF5000EA1FC /* MetaWearMag.swift in Sources */,
 				C67DA5F42267B555007550C5 /* PairingVC.swift in Sources */,
 				C6A2EFAF2277942D00D28621 /* MetaWearBattery.swift in Sources */,

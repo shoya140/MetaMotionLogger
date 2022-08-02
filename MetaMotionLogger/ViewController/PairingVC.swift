@@ -99,7 +99,7 @@ class PairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     // MARK: - Meta wear manager delegate
     
-    func deviceConnected() {
+    func deviceConnected(device: MetaWear) {
         self.dismiss(animated: true, completion: nil)
     }
 }

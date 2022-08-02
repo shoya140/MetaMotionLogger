@@ -45,6 +45,8 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         
         MetaWearManager.sharedObject.delegates.append(self)
+        
+        reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -187,7 +189,19 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func receivedAcc(data: MetaWearAcc) {
+    func reloadData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.033) {
+            if UIApplication.shared.applicationState == .active  {
+                self.tableView.reloadData()
+            }
+            self.reloadData()
+        }
+    }
+    
+    func receivedAcc(data: MetaWearAcc, device: MetaWear) {
+        if (self.device != device) {
+            return
+        }
         accXValues.append(data.x)
         if accXValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
             accXValues.removeFirst()
@@ -202,15 +216,12 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if accZValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
             accZValues.removeFirst()
         }
-        
-        DispatchQueue.main.async {
-            if UIApplication.shared.applicationState == .active  {
-                self.tableView.reloadData()
-            }
-        }
     }
     
-    func receivedGyro(data: MetaWearGyro) {
+    func receivedGyro(data: MetaWearGyro, device: MetaWear) {
+        if (self.device != device) {
+            return
+        }
         rollValues.append(data.roll)
         if rollValues.count > Int(self.numberOfValuesToBeDisplayed100Hz) {
             rollValues.removeFirst()
@@ -227,7 +238,10 @@ class MonitoringVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func receivedQuat(data: MetaWearQuat) {        
+    func receivedQuat(data: MetaWearQuat, device: MetaWear) {
+        if (self.device != device) {
+            return
+        }
         if data.w.isNaN {
             return
         }
